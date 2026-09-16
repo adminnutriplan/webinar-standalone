@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruang Materi Peserta — Webinar Keamanan Pangan Vol. 2 | Sostain</title>
+<meta name="description" content="Halaman khusus peserta Webinar Keamanan Pangan Sostain Vol. 2. Tonton ulang empat sesi GMP, SSOP, pest control, dan HACCP, ambil materi presentasi di NutriPlan, dan ajukan jadwal konsultasi dapur.">
+<meta property="og:title" content="Ruang Materi Peserta — Webinar Keamanan Pangan Vol. 2">
+<meta property="og:description" content="Rekaman empat sesi, materi presentasi, dan pendampingan lanjutan untuk dapur SPPG Anda.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   DESAIN TEMPLATE DENGAN PANDUAN BRAND SOSTAIN.ID
+   ========================================================================== */
+:root{
+  --paper:#F4F9F6;
+  --surface:#FFFFFF;
+  --surface-alt:#EAF3EE;
+
+  --ink:#0F172A;
+  --ink-soft:#475569;
+  --ink-faint:#94A3B8;
+  --line:#E2E8F0;
+  --line-strong:#CBD5E1;
+
+  /* Sostain Primary Deep Emerald & Accents */
+  --s-900:#004D40;
+  --s-700:#00695C;
+  --s-500:#10B981;
+  --s-100:#E6F4F1;
+  --s-50:#F0FDF4;
+
+  /* NutriPlan Secondary Orange/Gold */
+  --n-700:#D97706;
+  --n-600:#F59E0B;
+  --n-100:#FEF3C7;
+  --n-50:#FFFBEB;
+
+  --radius-s:10px;
+  --radius-m:16px;
+  --radius-l:24px;
+
+  --wrap:1140px;
+  --gutter:24px;
+
+  --shadow-card:0 4px 12px rgba(0, 77, 64, 0.04);
+  --shadow-lift:0 12px 24px rgba(0, 77, 64, 0.08);
+
+  --font:'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:88px}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.001ms !important; transition-duration:.001ms !important}
+}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--s-500); outline-offset:3px; border-radius:4px}
+
+.wrap{max-width:var(--wrap); margin:0 auto; padding-inline:var(--gutter)}
+.section{padding-block:88px}
+.section--tight{padding-block:64px}
+@media (max-width:760px){
+  .section{padding-block:60px}
+  .section--tight{padding-block:48px}
+}
+
+/* --- Tipografi ------------------------------------------------------------ */
+h1,h2,h3{margin:0; line-height:1.2; letter-spacing:-.02em; font-weight:800}
+h1{font-size:clamp(2.1rem, 1.4rem + 3vw, 3.2rem); letter-spacing:-.03em}
+h2{font-size:clamp(1.6rem, 1.2rem + 1.7vw, 2.4rem)}
+h3{font-size:1.15rem; font-weight:700; letter-spacing:-.01em}
+p{margin:0}
+.lede{font-size:clamp(1rem,.95rem + .3vw,1.15rem); color:var(--ink-soft); max-width:60ch}
+.fine{font-size:.875rem; color:var(--ink-faint); line-height:1.6}
+
+.eyebrow{
+  display:inline-block; margin-bottom:14px;
+  font-size:.85rem; font-weight:800; color:var(--s-700); text-transform:uppercase; letter-spacing:.05em;
+  position:relative; padding-left:26px;
+}
+.eyebrow::before{
+  content:''; position:absolute; left:0; top:.55em;
+  width:18px; height:3px; background:var(--s-500); border-radius:2px;
+}
+
+/* --- Tombol --------------------------------------------------------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  padding:14px 26px; border-radius:999px; border:1.5px solid transparent;
+  font:inherit; font-weight:700; font-size:.97rem; letter-spacing:-.01em;
+  text-decoration:none; cursor:pointer;
+  transition:all .2s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn--nutri{background:var(--n-600); color:#fff; box-shadow:0 4px 12px rgba(245, 158, 11, 0.25)}
+.btn--nutri:hover{background:var(--n-700); transform:translateY(-2px)}
+.btn--sostain{background:var(--s-900); color:#fff; box-shadow:0 4px 12px rgba(0, 77, 64, 0.25)}
+.btn--sostain:hover{background:var(--s-700); transform:translateY(-2px)}
+.btn--ghost{background:transparent; color:var(--s-900); border-color:var(--line-strong)}
+.btn--ghost:hover{border-color:var(--s-700); background:var(--s-100)}
+.btn--onDark{background:#fff; color:var(--s-900)}
+.btn--onDark:hover{background:var(--s-100); transform:translateY(-2px)}
+.btn--sm{padding:10px 20px; font-size:.9rem}
+.btn--block{width:100%}
+.btn-row{display:flex; flex-wrap:wrap; gap:12px}
+
+/* --- Navigasi Sticky ------------------------------------------------------ */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.92); backdrop-filter:saturate(1.6) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav__inner{
+  max-width:var(--wrap); margin:0 auto; padding:12px var(--gutter);
+  display:flex; align-items:center; gap:20px;
+}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0}
+.brand__logo{height:36px; width:auto; display:block}
+.brand__tag{
+  font-size:.72rem; font-weight:700; color:var(--s-900);
+  background:var(--s-100); padding:4px 10px; border-radius:999px; white-space:nowrap;
+}
+.nav__links{
+  display:flex; gap:6px; margin-left:auto;
+  overflow-x:auto; scrollbar-width:none;
+}
+.nav__links::-webkit-scrollbar{display:none}
+.nav__links a{
+  padding:8px 14px; border-radius:999px; text-decoration:none;
+  font-size:.92rem; font-weight:600; color:var(--ink-soft); white-space:nowrap;
+}
+.nav__links a:hover{color:var(--s-900); background:var(--surface-alt)}
+@media (max-width:860px){
+  .brand__tag{display:none}
+  .nav__inner{flex-wrap:wrap; gap:12px}
+  .nav__links{order:3; width:100%; margin-left:0}
+  .nav .btn{margin-left:auto}
+}
+
+/* --- Hero Section --------------------------------------------------------- */
+.hero{
+  background:linear-gradient(180deg, #E6F2EC 0%, var(--paper) 100%);
+  padding-block:56px 40px;
+}
+.hero__grid{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:48px; align-items:center}
+.hero h1{margin-bottom:20px; color:var(--s-900)}
+.hero .lede{margin-bottom:28px}
+
+.hero__media{
+  position:relative; border-radius:var(--radius-l); overflow:hidden;
+  box-shadow:var(--shadow-lift); border:4px solid #fff; background:#fff;
+}
+.hero__img{
+  width:100%; height:auto; max-height:460px; object-fit:contain; display:block;
+  transition:transform .4s ease;
+}
+.hero__media:hover .hero__img{transform:scale(1.01)}
+
+@media (max-width:960px){
+  .hero__grid{grid-template-columns:1fr; gap:36px}
+}
+
+/* --- Grid Urutan Pembelajaran (4 Shape Cards Modern) --------------------- */
+.learning-flow{
+  padding-bottom:56px;
+}
+.step-cards{
+  display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:18px;
+}
+@media (max-width:960px){
+  .step-cards{grid-template-columns:repeat(2, 1fr)}
+}
+@media (max-width:540px){
+  .step-cards{grid-template-columns:1fr}
+}
+
+.step-card{
+  background:rgba(255, 255, 255, 0.85);
+  border:1px solid rgba(210, 230, 220, 0.8);
+  border-radius:var(--radius-l);
+  padding:22px;
+  display:flex; flex-direction:column; gap:12px;
+  text-decoration:none; color:inherit;
+  backdrop-filter:blur(10px);
+  transition:all .25s ease;
+  box-shadow:0 4px 14px rgba(0, 77, 64, 0.03);
+}
+.step-card:hover{
+  transform:translateY(-4px);
+  background:#FFFFFF;
+  box-shadow:var(--shadow-lift);
+  border-color:var(--s-500);
+}
+.step-card__icon{
+  width:42px; height:42px; border-radius:12px;
+  background:var(--s-100); color:var(--s-900);
+  display:grid; place-items:center; flex-shrink:0;
+}
+.step-card--accent .step-card__icon{
+  background:var(--n-100); color:var(--n-700);
+}
+.step-card__label{
+  font-size:.72rem; font-weight:800; text-transform:uppercase;
+  color:var(--ink-faint); letter-spacing:.06em; margin-top:2px;
+}
+.step-card__title{
+  font-size:1.02rem; font-weight:800; color:var(--s-900); line-height:1.3;
+}
+.step-card__desc{
+  font-size:.85rem; color:var(--ink-soft); line-height:1.45;
+}
+
+/* --- Section Video -------------------------------------------------------- */
+.sec-head{max-width:62ch; margin-bottom:40px}
+.sec-head h2{margin-bottom:12px; color:var(--s-900)}
+
+.sessions{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px}
+@media (max-width:860px){.sessions{grid-template-columns:1fr; gap:20px}}
+
+.session{
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius-l); overflow:hidden; display:flex; flex-direction:column;
+  box-shadow:var(--shadow-card); transition:transform .2s ease, box-shadow .2s ease;
+}
+.session:hover{transform:translateY(-4px); box-shadow:var(--shadow-lift)}
+.player-wrap{
+  position:relative; aspect-ratio:16/9; background:var(--s-900);
+  width:100%; overflow:hidden;
+}
+.player-link{position:absolute; inset:0; display:block; color:#fff; text-decoration:none}
+.player-link img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  transition:transform .35s ease, filter .35s ease;
+}
+.player-link::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.05) 40%, rgba(0,0,0,.55));
+}
+.player-link:hover img{transform:scale(1.04); filter:brightness(.9)}
+.player__play{
+  position:absolute; left:50%; top:50%; z-index:2; transform:translate(-50%,-50%);
+  width:68px; height:48px; border-radius:14px; background:#FF0000;
+  display:grid; place-items:center; box-shadow:0 6px 18px rgba(0,0,0,.35);
+  transition:transform .2s ease;
+}
+.player-link:hover .player__play{transform:translate(-50%,-50%) scale(1.08)}
+.player__cta{
+  position:absolute; right:14px; bottom:12px; z-index:2;
+  font-size:.8rem; font-weight:700; text-shadow:0 1px 4px rgba(0,0,0,.6);
+}
+.session__watch{align-self:flex-start; margin-top:6px}
+.player__badge{
+  position:absolute; left:14px; top:14px; z-index:2;
+  background:rgba(0, 77, 64, 0.9); color:#fff;
+  font-size:.75rem; font-weight:700; padding:4px 12px; border-radius:999px;
+  pointer-events:none; backdrop-filter:blur(4px);
+}
+
+.session__body{padding:24px; display:flex; flex-direction:column; gap:10px; flex:1}
+.session__stage{font-size:.8rem; font-weight:800; color:var(--s-500); text-transform:uppercase; letter-spacing:.03em}
+.session__desc{font-size:.94rem; color:var(--ink-soft)}
+.session__by{
+  margin-top:auto; padding-top:16px; border-top:1px solid var(--line);
+  font-size:.88rem; line-height:1.5;
+}
+.session__by strong{display:block; font-weight:700; color:var(--ink)}
+.session__by span{color:var(--ink-faint)}
+
+/* --- Materi Presentasi ---------------------------------------------------- */
+.split{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:56px; align-items:center}
+@media (max-width:900px){.split{grid-template-columns:1fr; gap:36px}}
+
+.filelist{
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius-l); padding:12px; box-shadow:var(--shadow-card);
+}
+.file{
+  display:flex; align-items:center; gap:14px;
+  padding:14px 16px; border-radius:var(--radius-m);
+}
+.file + .file{border-top:1px solid var(--line)}
+.file__icon{
+  flex-shrink:0; width:40px; height:44px; border-radius:6px;
+  background:var(--s-100); border:1px solid var(--s-500);
+  display:grid; place-items:center; font-size:.7rem; font-weight:800; color:var(--s-900);
+}
+.file__name{font-size:.94rem; font-weight:700; line-height:1.4}
+.file__meta{font-size:.82rem; color:var(--ink-faint)}
+.file__lock{margin-left:auto; flex-shrink:0; color:var(--ink-faint)}
+
+.steps{list-style:none; margin:22px 0 28px; padding:0; display:grid; gap:14px}
+.steps li{display:flex; gap:12px; align-items:flex-start; font-size:.96rem; color:var(--ink-soft)}
+.steps b{color:var(--ink); font-weight:700}
+.steps__num{
+  flex-shrink:0; width:24px; height:24px; border-radius:50%; margin-top:2px;
+  background:var(--n-100); color:var(--n-700);
+  font-size:.875rem; font-weight:800; display:grid; place-items:center;
+}
+
+/* --- Section NutriPlan & Konsultasi -------------------------------------- */
+.next{background:var(--s-900); color:#fff; position:relative; overflow:hidden}
+.next .eyebrow{color:var(--s-500)}
+.next h2{color:#fff}
+.next__head{max-width:56ch; margin-bottom:40px}
+.next__head p.lede{color:rgba(255,255,255,.8); margin-top:12px}
+
+.next__grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:stretch}
+@media (max-width:860px){.next__grid{grid-template-columns:1fr}}
+
+.nextcard{
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.15);
+  border-radius:var(--radius-l); padding:32px; backdrop-filter:blur(10px);
+  display:flex; flex-direction:column;
+}
+@media (max-width:520px){.nextcard{padding:24px}}
+.nextcard__kicker{font-size:.8rem; font-weight:800; margin-bottom:10px; color:var(--s-500); text-transform:uppercase; letter-spacing:.05em}
+.nextcard--nutri .nextcard__kicker{color:var(--n-600)}
+.nextcard h3{font-size:1.35rem; font-weight:800; color:#fff; margin-bottom:10px}
+.nextcard__desc{font-size:.96rem; color:rgba(255,255,255,.75); line-height:1.6}
+
+.tick{list-style:none; margin:20px 0 0; padding:0; display:grid; gap:10px}
+.tick li{display:flex; gap:10px; align-items:flex-start; font-size:.92rem; color:rgba(255,255,255,.9)}
+.tick svg{flex-shrink:0; margin-top:4px; color:var(--n-600)}
+
+.nextcard__action{margin-top:auto; padding-top:28px}
+.nextcard__foot{margin-top:12px; font-size:.82rem; color:rgba(255,255,255,.6); text-align:center}
+.nextcard__foot a{color:rgba(255,255,255,.9); text-decoration:underline}
+
+.picker__q{font-size:.88rem; font-weight:700; color:rgba(255,255,255,.8); margin:22px 0 10px}
+.topics{display:flex; flex-wrap:wrap; gap:8px}
+.topic{
+  border:1px solid rgba(255,255,255,.2); background:transparent; color:rgba(255,255,255,.9);
+  font:inherit; font-size:.85rem; font-weight:600; padding:7px 14px;
+  border-radius:999px; cursor:pointer; transition:all .15s ease;
+}
+.topic:hover{border-color:#fff; background:rgba(255,255,255,.1)}
+.topic[aria-pressed="true"]{background:#fff; color:var(--s-900); border-color:#fff}
+
+/* --- Penutup & FAQ ---------------------------------------------------------- */
+.closing{text-align:center}
+.closing .sec-head{margin-inline:auto; text-align:center}
+
+.faq{max-width:760px; margin:0 auto; text-align:left}
+details{
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius-m); margin-bottom:12px; overflow:hidden;
+  box-shadow:var(--shadow-card);
+}
+summary{
+  padding:18px 22px; cursor:pointer; font-weight:700; font-size:.98rem;
+  list-style:none; display:flex; align-items:center; gap:12px; color:var(--s-900);
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+'; margin-left:auto; color:var(--s-500); font-size:1.4rem; font-weight:400}
+details[open] summary::after{content:'−'}
+details p{padding:0 22px 20px; font-size:.94rem; color:var(--ink-soft); line-height:1.6}
+
+/* --- Simple Footer ---------------------------------------------------------- */
+.footer-simple{
+  background:var(--s-900);
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-block:36px;
+  color:rgba(255,255,255,0.85);
+  text-align:center;
+}
+.footer-simple__company{
+  font-weight:800;
+  font-size:1.05rem;
+  color:#FFFFFF;
+  margin-bottom:8px;
+  letter-spacing:-.01em;
+}
+.footer-simple__text{
+  font-size:.85rem;
+  line-height:1.6;
+  max-width:72ch;
+  margin:0 auto;
+  color:rgba(255,255,255,0.7);
+}
+</style>
+</head>
+<body>
+
+<!-- ============================== NAVIGASI ============================== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="https://www.sostain.id/">
+      <img class="brand__logo" src="Logo Sostain/Logo Sostain-Main.svg">
+      <span class="brand__tag">Ruang Peserta</span>
+    </a>
+    <nav class="nav__links" aria-label="Bagian halaman">
+      <a href="#rekaman">Rekaman</a>
+      <a href="#materi">Materi</a>
+      <a href="#nutriplan">NutriPlan</a>
+      <a href="#konsultasi">Konsultasi</a>
+    </nav>
+    <a class="btn btn--nutri btn--sm" data-link="register">Daftar NutriPlan</a>
+  </div>
+</header>
+
+<!-- ================================ HERO ================================ -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <!-- PEMBARUAN TEKS SESUAI PERMINTAAN -->
+      <p class="eyebrow">AKSES GRATIS PESERTA</p>
+      <h1>Webinar Keamanan Pangan Vol. 2</h1>
+      <p class="lede">Akses rekaman 4 sesi pembelajaran lengkap, unduh slide presentasi resmi, dan klaim benefit pendampingan dapur Anda.</p>
+      <div class="btn-row">
+        <a class="btn btn--sostain" href="#rekaman">Tonton Rekaman Webinar</a>
+        <a class="btn btn--ghost" data-link="knowledge">Buka Materi di NutriPlan</a>
+      </div>
+      <p class="fine" style="margin-top:16px">📌 Materi presentasi dapat diakses secara gratis di NutriPlan.id.</p>
+    </div>
+
+    <!-- POSTER WEBINAR OFFICIAL IMAGE -->
+    <div class="hero__media">
+      <img class="hero__img" src="Logo Sostain/poster webinar2.jpg.jpeg">
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4 SHAPE CARDS (URUTAN PEMBELAJARAN) ================= -->
+<section class="learning-flow">
+  <div class="wrap">
+    <div class="step-cards">
+      
+      <!-- Card 1 -->
+      <a class="step-card" href="#rekaman">
+        <div class="step-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 10-5 3V7l5 3Z"/><rect width="20" height="14" x="2" y="5" rx="2"/></svg>
+        </div>
+        <div>
+          <span class="step-card__label">Langkah 01</span>
+          <div class="step-card__title">Tonton Rekaman</div>
+        </div>
+        <div class="step-card__desc">Sesi GMP, SSOP, Pest Control, dan HACCP lengkap.</div>
+      </a>
+
+      <!-- Card 2 -->
+      <a class="step-card" href="#materi">
+        <div class="step-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div>
+          <span class="step-card__label">Langkah 02</span>
+          <div class="step-card__title">Unduh Slide PDF</div>
+        </div>
+        <div class="step-card__desc">Akses seluruh materi di Pusat Pengetahuan NutriPlan.</div>
+      </a>
+
+      <!-- Card 3 (PEMBARUAN JUDUL & IKON MAKANAN/CULINARY) -->
+      <a class="step-card step-card--accent" href="#nutriplan">
+        <div class="step-card__icon">
+          <!-- Ikon Makanan (Utensils / Plate) -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"/><path d="M15 2v16"/><path d="M8 2v18"/><path d="M5 2v6a3 3 0 0 0 6 0V2"/></svg>
+        </div>
+        <div>
+          <span class="step-card__label">Langkah 03</span>
+          <div class="step-card__title">Coba NutriPlan</div>
+        </div>
+        <div class="step-card__desc">Gratis 14 hari perencanaan menu & analisis gizi.</div>
+      </a>
+
+      <!-- Card 4 -->
+      <a class="step-card" href="#konsultasi">
+        <div class="step-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <span class="step-card__label">Langkah 04</span>
+          <div class="step-card__title">Konsultasi Dapur</div>
+        </div>
+        <div class="step-card__desc">Pendampingan teknis dan audit bersama tim Sostain.</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SESI REKAMAN ============================ -->
+<section class="section" id="rekaman">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Rekaman Sesi</p>
+      <!-- PEMBARUAN JUDUL SESUAI PERMINTAAN -->
+      <h2>Hasil Rekaman Webinar</h2>
+      <p class="lede">Putar kembali pembahasan dari para pemateri ahli di YouTube untuk memperkuat standar operasional dapur Anda.</p>
+    </div>
+    <div class="sessions" id="sessionGrid"></div>
+  </div>
+</section>
+
+<!-- =========================== MATERI PRESENTASI ========================= -->
+<section class="section" id="materi" style="background:var(--surface-alt); border-block:1px solid var(--line)">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Materi Presentasi (PDF)</p>
+      <h2>Akses Slide Pembelajaran di NutriPlan</h2>
+      <p class="lede">Temukan seluruh slide presentasi, regulasi BGN, SOP, serta form ceklis keamanan pangan dalam satu tempat.</p>
+      <ol class="steps">
+        <li><span class="steps__num">1</span><span>Buka NutriPlan, lalu <b>daftar akun baru atau login</b> jika sudah memiliki akun.</span></li>
+        <li><span class="steps__num">2</span><span>Masuk ke menu <b>Pusat Pengetahuan</b> dari dashboard akun Anda.</span></li>
+        <li><span class="steps__num">3</span><span>Pilih koleksi <b>Webinar Keamanan Pangan Vol. 2</b> dan unduh materi yang Anda butuhkan.</span></li>
+      </ol>
+      <div class="btn-row">
+        <a class="btn btn--nutri" data-link="knowledge">Akses Materi di NutriPlan.id</a>
+      </div>
+      <p class="fine" style="margin-top:16px">Pendaftaran akun gratis dan akses berlaku selamanya.</p>
+    </div>
+
+    <div class="filelist" id="fileList"></div>
+  </div>
+</section>
+
+<!-- ==================== LANGKAH BERIKUTNYA ==================== -->
+<section class="section next" id="lanjut">
+  <div class="wrap">
+    <div class="next__head">
+      <p class="eyebrow">Langkah Lanjutan</p>
+      <h2>Solusi Lanjutan untuk Dapur Anda</h2>
+      <p class="lede">Terapkan secara mandiri dengan NutriPlan atau dapatkan pendampingan langsung bersama tim ahli Sostain.</p>
+    </div>
+
+    <div class="next__grid">
+
+      <!-- KARTU NUTRIPLAN -->
+      <article class="nextcard nextcard--nutri" id="nutriplan">
+        <p class="nextcard__kicker">Fitur Produk NutriPlan</p>
+        <h3>Coba Gratis Fitur Berbayar Selama 14 Hari</h3>
+        <p class="nextcard__desc">Aplikasi perencanaan menu dan analisis nilai gizi otomatis khusus pengelola dapur.</p>
+        <ul class="tick">
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8 13.2 4.8 10l-1.3 1.3L8 15.8l8.5-8.5-1.3-1.3z"/></svg><span>Penyusunan menu otomatis berdasarkan data TKPI</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8 13.2 4.8 10l-1.3 1.3L8 15.8l8.5-8.5-1.3-1.3z"/></svg><span>Analisis gizi presisi sesuai standar AKG</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8 13.2 4.8 10l-1.3 1.3L8 15.8l8.5-8.5-1.3-1.3z"/></svg><span>Estimasi kebutuhan belanja & acuan harga pasar</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8 13.2 4.8 10l-1.3 1.3L8 15.8l8.5-8.5-1.3-1.3z"/></svg><span>Cetak label informasi nilai gizi & poster dapur</span></li>
+        </ul>
+        <div class="nextcard__action">
+          <a class="btn btn--nutri btn--block" data-link="register">Daftar NutriPlan Gratis</a>
+          <p class="nextcard__foot">Otomatis aktif setelah pendaftaran. Tanpa kartu kredit.</p>
+        </div>
+      </article>
+
+      <!-- KARTU SOSTAIN -->
+      <article class="nextcard nextcard--sostain" id="konsultasi">
+        <p class="nextcard__kicker">Layanan Konsultasi Sostain</p>
+        <h3>Konsultasi Layanan Dapur Bersama Ahli</h3>
+        <p class="nextcard__desc">Pendampingan langsung penerapan sistem keamanan pangan, audit, dan sanitasi dapur SPPG.</p>
+        <p class="picker__q">Pilih topik tantangan dapur Anda:</p>
+        <div class="topics" id="topicList"></div>
+        <div class="nextcard__action">
+          <button class="btn btn--onDark btn--block" type="button" id="submitConsult">Ajukan Jadwal Konsultasi</button>
+          <p class="nextcard__foot">Sesi diskusi awal tidak dipungut biaya. Atau <a data-link="consultForm">isi formulir lengkap</a>.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================ PENUTUP ============================== -->
+<section class="section closing">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Bantuan</p>
+      <h2>Pertanyaan Umum Peserta</h2>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>Bagaimana cara mendapatkan sertifikat webinar?</summary>
+        <p>Sertifikat dikirimkan panitia secara bertahap ke email terdaftar bagi peserta yang memenuhi ketentuan kehadiran. Jika ada kendala, hubungi kontak admin di bagian bawah halaman.</p>
+      </details>
+      <details>
+        <summary>Apakah rekaman materi ini bisa dibagikan ke rekan kerja?</summary>
+        <p>Bisa. Anda dapat membagikan link halaman ini ke rekan tim Anda. Namun untuk pengunduhan PDF disarankan tetap membuat akun NutriPlan masing-masing agar mendapat pembaruan materi.</p>
+      </details>
+      <details>
+        <summary>Saya sudah memiliki akun NutriPlan. Apakah harus mendaftar lagi?</summary>
+        <p>Tidak perlu. Silakan login ke akun NutriPlan Anda yang sudah ada dan langsung akses menu Pusat Pengetahuan untuk mengambil materi PDF.</p>
+      </details>
+      <details>
+        <summary>Berapa biaya untuk sesi konsultasi dapur Sostain?</summary>
+        <p>Sesi assessment awal dan diskusi pemetaan masalah dapur bersifat bebas biaya. Program pendampingan berbayar hanya akan disesuaikan dengan kebutuhan teknis di lapangan.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SIMPLE FOOTER (DISESUAIKAN) ==================== -->
+<footer class="footer-simple">
+  <div class="wrap">
+    <div class="footer-simple__company">PT Kolaborasi Sostain Indonesia</div>
+    <p class="footer-simple__text">Materi webinar bersifat edukatif dan mengacu pada prinsip umum GMP, SSOP, dan HACCP. Ketentuan yang mengikat di lapangan tetap mengikuti regulasi Kementerian Kesehatan RI dan Badan Gizi Nasional (BGN)</p>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================================
+   KONFIGURASI DATA WEBINAR & APLIKASI
+   ========================================================================== */
+const CONFIG = {
+  links:{
+    register:'https://nutriplan.id/register',
+    knowledge:'https://nutriplan.id/register',
+    consultForm:'https://www.sostain.id/'
+  },
+  waNumber:'6281116607152',
+  sessions:[
+    {
+      no:1,
+      stage:'Fondasi Operasional',
+      title:'Good Manufacturing Practices (GMP)',
+      desc:'Penerapan GMP pada operasional SPPG: alur produksi, tata letak dapur, higiene personel, dan pengendalian proses agar mutu masakan konsisten.',
+      speaker:'Asysyifa Riana, S.Gz., MT., AIFO., Dietisien',
+      role:'Assessor BNSP',
+      // Link YouTube (dibuka di tab baru)
+      videoUrl:'https://youtu.be/nfghNCRQJEI?si=KxBuiR_ivkTTSOFT'
+    },
+    {
+      no:2,
+      stage:'Sanitasi Harian',
+      title:'Standar Sanitasi: SSOP & Deep Cleaning',
+      desc:'Menyusun dan menjalankan SSOP, menentukan frekuensi pembersihan, memilih bahan kimia yang tepat, serta verifikasi kebersihan.',
+      speaker:'Dihqon Nadaamist, S.E., M.Si',
+      role:'Direktur Cleansheet',
+      videoUrl:'https://youtu.be/3iphqTyYMbs?si=9cjEUY_xP3UhN1xd'
+    },
+    {
+      no:3,
+      stage:'Pencegahan Kontaminasi',
+      title:'Manajemen Pengendalian Hama (Pest Control)',
+      desc:'Pemetaan titik rawan, pemasangan monitoring, tindakan pencegahan, dan dokumentasi pest control yang siap ditunjukkan saat audit.',
+      speaker:'Fikrunnia Adi Prasojo, S.Si., M.Si',
+      role:'Direktur Dynamic Pest',
+      videoUrl:'https://youtu.be/ypiWg0dGcDM?si=o_IwcUM0Y5hP9CWv'
+    },
+    {
+      no:4,
+      stage:'Kepatuhan & Audit',
+      title:'Implementasi HACCP & Persiapan Audit Dapur',
+      desc:'Menetapkan titik kendali kritis, batas kritis, tindakan koreksi, hingga menyiapkan dokumen rekapitulasi saat dapur diaudit.',
+      speaker:'Halim Kusnadi, S.Gz, M.A.R.S, RD, FRSPH',
+      role:'Nutritionist RSCM',
+      videoUrl:'https://youtu.be/4UYWjKcMf68?si=VPnuBPUn1v4V8sYF'
+    }
+  ],
+  topics:[
+    'Sistem Keamanan Pangan','Higiene & Sanitasi','Penyusunan SOP',
+    'Persiapan Audit / Akreditasi','Pengelolaan Dapur','Deep Cleaning',
+    'Pest Control','HACCP','Layout & IPAL'
+  ]
+};
+
+/* --- Tautan Global -------------------------------------------------------- */
+document.querySelectorAll('[data-link]').forEach(el=>{
+  const url = CONFIG.links[el.dataset.link];
+  if(url){ el.setAttribute('href',url); el.setAttribute('rel','noopener'); }
+});
+
+/* --- Generasi Kartu Sesi Video (Thumbnail → buka YouTube di tab baru) ---- */
+// Ambil ID video dari link youtu.be / youtube.com untuk thumbnail
+const ytId = url => {
+  const m = String(url).match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/)([\w-]{11})/);
+  return m ? m[1] : '';
+};
+const grid = document.getElementById('sessionGrid');
+CONFIG.sessions.forEach(s=>{
+  const card = document.createElement('article');
+  card.className = 'session';
+  const id = ytId(s.videoUrl);
+  const thumb = id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : '';
+
+  card.innerHTML = `
+    <div class="player-wrap">
+      <span class="player__badge">Sesi ${s.no}</span>
+      <a class="player-link" href="${s.videoUrl}" target="_blank" rel="noopener noreferrer"
+         aria-label="Tonton Sesi ${s.no}: ${s.title} di YouTube (tab baru)">
+        ${thumb ? `<img src="${thumb}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+        <span class="player__play" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        <span class="player__cta">Tonton di YouTube ↗</span>
+      </a>
+    </div>
+    <div class="session__body">
+      <p class="session__stage">${s.stage}</p>
+      <h3>${s.title}</h3>
+      <p class="session__desc">${s.desc}</p>
+      <a class="btn btn--ghost btn--sm session__watch" href="${s.videoUrl}" target="_blank" rel="noopener noreferrer">Tonton Rekaman ↗</a>
+      <p class="session__by"><strong>${s.speaker}</strong><span>${s.role}</span></p>
+    </div>`;
+  grid.appendChild(card);
+});
+
+/* --- Daftar Berkas PDF --------------------------------------------------- */
+const fileList = document.getElementById('fileList');
+CONFIG.sessions.forEach(s=>{
+  const row = document.createElement('div');
+  row.className = 'file';
+  row.innerHTML = `
+    <span class="file__icon">PDF</span>
+    <span>
+      <span class="file__name">${s.title}</span>
+      <span class="file__meta">Sesi ${s.no} · ${s.speaker.split(',')[0]}</span>
+    </span>
+    <span class="file__lock" aria-label="Akses lewat NutriPlan">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path d="M14.5 8V6a4.5 4.5 0 1 0-9 0v2H4v10h12V8h-1.5ZM7 6a3 3 0 1 1 6 0v2H7V6Z"/>
+      </svg>
+    </span>`;
+  fileList.appendChild(row);
+});
+
+/* --- Topic Picker Konsultasi ---------------------------------------------- */
+const topicList = document.getElementById('topicList');
+CONFIG.topics.forEach(t=>{
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'topic';
+  b.textContent = t;
+  b.setAttribute('aria-pressed','false');
+  b.addEventListener('click',()=>{
+    const on = b.getAttribute('aria-pressed') === 'true';
+    b.setAttribute('aria-pressed', String(!on));
+  });
+  topicList.appendChild(b);
+});
+
+document.getElementById('submitConsult').addEventListener('click',()=>{
+  const picked = [...document.querySelectorAll('.topic[aria-pressed="true"]')].map(b=>b.textContent);
+
+  let msg = 'Halo tim Sostain, saya peserta Webinar Keamanan Pangan Vol. 2 dan ingin mengajukan jadwal konsultasi dapur.';
+  if(picked.length) msg += '\n\nTopik pembahasan: ' + picked.join(', ');
+  msg += '\n\nMohon informasi jadwal yang tersedia. Terima kasih.';
+
+  window.open('https://wa.me/'+CONFIG.waNumber+'?text='+encodeURIComponent(msg), '_blank', 'noopener');
+});
+</script>
+</body>
+</html>
