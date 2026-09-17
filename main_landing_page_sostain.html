@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sostain — Sistem Manajemen Keamanan Pangan & Dapur Standar BGN</title>
 <meta name="description" content="Solusi terintegrasi untuk dapur yang aman, higienis, dan sesuai standar BGN. Pendampingan Food Safety, Pest Control, Deep Cleaning, dan NutriPlan.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230B3F2A' d='M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z'/%3E%3Cpath fill='none' stroke='%2386EFAC' stroke-width='2.2' d='M9 12l2 2 4-4'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sostain — Sistem Manajemen Keamanan Pangan & Dapur Standar BGN">
+<meta property="og:description" content="Solusi terintegrasi untuk dapur yang aman, higienis, dan sesuai standar BGN. Pendampingan Food Safety, Pest Control, Deep Cleaning, dan NutriPlan.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sostain — Sistem Manajemen Keamanan Pangan & Dapur Standar BGN">
+<meta name="twitter:description" content="Solusi terintegrasi untuk dapur yang aman, higienis, dan sesuai standar BGN. Pendampingan Food Safety, Pest Control, Deep Cleaning, dan NutriPlan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -231,36 +238,13 @@ header {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  font-size: 1.32rem;
-  letter-spacing: -0.04em;
-  color: var(--ink);
   text-decoration: none;
 }
 
-.logo-symbol {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #187750 0%, #0B3F2A 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFF;
-  box-shadow: 0 6px 16px rgba(11, 63, 42, 0.3);
-}
-
-.logo-symbol svg {
-  width: 18px;
-  height: 18px;
-  stroke: #86EFAC;
-  stroke-width: 2.2;
-}
-
-.brand-logo span em {
-  font-style: normal;
-  color: var(--brand-light);
+.brand-logo-img {
+  height: 34px;
+  width: auto;
+  display: block;
 }
 
 nav.main-menu {
@@ -289,6 +273,53 @@ nav.main-menu a:hover {
   align-items: center;
 }
 
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.65);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--brand);
+  fill: none;
+  stroke-width: 2.2;
+}
+
+.nav-mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+  padding: 14px;
+}
+
+.nav-mobile-menu a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 12px 10px;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.nav-mobile-menu a:hover {
+  background: rgba(20, 99, 66, 0.08);
+}
+
+.nav-mobile-menu.open {
+  display: flex;
+}
+
 /* HERO SECTION */
 .hero-section {
   padding: 20px 0 54px;
@@ -306,24 +337,6 @@ nav.main-menu a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.hero-img-box {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  position: relative;
-  box-shadow: var(--shadow-lg);
-  min-height: 400px;
-}
-
-.hero-img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(11, 63, 42, 0.9) 0%, rgba(11, 63, 42, 0.2) 60%, transparent 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 30px;
 }
 
 .client-img-wrap {
@@ -1501,6 +1514,17 @@ footer p {
 
 @media (max-width: 768px) {
   nav.main-menu { display: none; }
+  .nav-toggle { display: flex; }
+  /* Collapse the WhatsApp CTA to an icon-only circle so it stops
+     colliding with the logo and the hamburger toggle on narrow screens. */
+  .nav-cta .btn-primary {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .nav-cta .btn-primary .btn-label { display: none; }
   .hero-copy { padding: 36px 24px; }
   .sim-card { padding: 26px 20px; }
   .benefits-grid { grid-template-columns: 1fr; }
@@ -1508,6 +1532,13 @@ footer p {
   .unit-prices-grid { grid-template-columns: 1fr; }
   .contact-card { padding: 32px 22px; }
   .ethics-card { padding: 32px 22px; }
+
+  /* Backdrop-filter blur is expensive to render; this page uses it on
+     many stacked cards, so it's reduced on small/low-end devices. */
+  .glass-panel, .glass-dark {
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+  }
 }
 </style>
 </head>
@@ -1520,10 +1551,7 @@ footer p {
   <div class="wrap">
     <div class="nav-bar glass-panel">
       <a class="brand-logo" href="#top">
-        <div class="logo-symbol">
-          <svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <span>sos<em>tain</em></span>
+        <img src="Logo%20Sostain/Logo%20Sostain-Main.svg" alt="Sostain" class="brand-logo-img">
       </a>
       <nav class="main-menu">
         <a href="#layanan">Layanan</a>
@@ -1533,12 +1561,22 @@ footer p {
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-cta">
-        <a class="btn btn-primary" href="https://wa.me/6281110232224?text=Halo%20Sostain,%20saya%20ingin%20konsultasi%20mengenai%20keamanan%20pangan%20dapur%20kami" target="_blank" rel="noopener">
+        <a class="btn btn-primary wa-cta-link" data-wa-msg="Halo Sostain, saya ingin konsultasi mengenai keamanan pangan dapur kami" href="#" target="_blank" rel="noopener" aria-label="Hubungi Kami via WhatsApp">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Hubungi Kami
+          <span class="btn-label">Hubungi Kami</span>
         </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navMobileMenu">
+          <svg id="navToggleIcon" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
       </div>
     </div>
+    <nav class="glass-panel nav-mobile-menu" id="navMobileMenu">
+      <a href="#layanan">Layanan</a>
+      <a href="#sistem">Sistem & Alur</a>
+      <a href="#klien">Segmen Dapur</a>
+      <a href="#paket">Paket Harga</a>
+      <a href="#faq">FAQ</a>
+    </nav>
   </div>
 </header>
 
@@ -1579,10 +1617,6 @@ footer p {
       </div>
     </div>
     
-    <!-- Hero Image Collage (Replacing pure simulator on desktop, moving simulator down slightly or integrating) -->
-    <div class="hero-img-box hidden md:block" style="display: none;"> <!-- We keep simulator on top right for functionality, this is optional if you wanted purely image here -->
-    </div>
-
     <!-- Right: Interactive Food Temp Safety Simulator -->
     <div class="glass-panel sim-card" id="simulator">
       <div>
@@ -1704,7 +1738,7 @@ footer p {
     <div class="services-bento">
       <!-- Card 1 (Large) -->
       <div class="glass-panel svc-card svc-card-1">
-        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=400&h=400" alt="Chef inspecting food" class="svc-img-wrap" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=400&h=400" alt="Chef inspecting food" class="svc-img-wrap" width="400" height="400" loading="lazy">
         <div>
           <span class="svc-tag">Pilar Inti Sistem</span>
           <div class="svc-icon-box">
@@ -1722,7 +1756,7 @@ footer p {
 
       <!-- Card 2 -->
       <div class="glass-panel svc-card svc-card-2">
-        <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&q=80&w=400&h=400" alt="Pest Control" class="svc-img-wrap" style="border-radius: 20px;" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&q=80&w=400&h=400" alt="Pest Control" class="svc-img-wrap" style="border-radius: 20px;" width="400" height="400" loading="lazy">
         <div>
           <span class="svc-tag">Sanitasi Penunjang</span>
           <div class="svc-icon-box">
@@ -1739,7 +1773,7 @@ footer p {
 
       <!-- Card 3 -->
       <div class="glass-panel svc-card svc-card-3">
-        <img src="https://images.unsplash.com/photo-1584820927498-cafe2c07a769?auto=format&fit=crop&q=80&w=400&h=400" alt="Deep Cleaning" class="svc-img-wrap" style="border-radius: 20px;" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1584820927498-cafe2c07a769?auto=format&fit=crop&q=80&w=400&h=400" alt="Deep Cleaning" class="svc-img-wrap" style="border-radius: 20px;" width="400" height="400" loading="lazy">
         <div>
           <span class="svc-tag">Kebersihan Menyeluruh</span>
           <div class="svc-icon-box">
@@ -1756,7 +1790,7 @@ footer p {
 
       <!-- Card 4 (Large) -->
       <div class="glass-panel svc-card svc-card-4">
-        <img src="https://images.unsplash.com/photo-1498837167339-2f207df0e395?auto=format&fit=crop&q=80&w=400&h=400" alt="Nutrition Data" class="svc-img-wrap" style="border-radius: 20px;" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1498837167339-2f207df0e395?auto=format&fit=crop&q=80&w=400&h=400" alt="Nutrition Data" class="svc-img-wrap" style="border-radius: 20px;" width="400" height="400" loading="lazy">
         <div>
           <span class="svc-tag gold">Platform Digital Gizi</span>
           <div class="svc-icon-box amber">
@@ -1890,7 +1924,7 @@ footer p {
     <div class="client-grid">
       <div class="glass-panel client-card">
         <div class="client-img-wrap">
-            <img src="https://images.unsplash.com/photo-1509315811345-672d83ef2fbc?auto=format&fit=crop&q=80&w=500&h=300" alt="Dapur SPPG MBG" class="img-cover" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1509315811345-672d83ef2fbc?auto=format&fit=crop&q=80&w=500&h=300" alt="Dapur SPPG MBG" class="img-cover" width="500" height="300" loading="lazy">
         </div>
         <div class="client-icon" style="margin-top:-35px; position: relative; z-index: 2; background: var(--surface); box-shadow: var(--shadow-sm);">
           <svg viewBox="0 0 24 24"><path d="M3 10l9-5 9 5-9 5-9-5z"/><path d="M7 12.5V17c0 1.2 2.2 2.5 5 2.5s5-1.3 5-2.5v-4.5"/></svg>
@@ -1901,7 +1935,7 @@ footer p {
 
       <div class="glass-panel client-card">
         <div class="client-img-wrap">
-            <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?auto=format&fit=crop&q=80&w=500&h=300" alt="Katering & Central Kitchen" class="img-cover" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?auto=format&fit=crop&q=80&w=500&h=300" alt="Katering & Central Kitchen" class="img-cover" width="500" height="300" loading="lazy">
         </div>
         <div class="client-icon" style="margin-top:-35px; position: relative; z-index: 2; background: var(--surface); box-shadow: var(--shadow-sm);">
           <svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M6 12a6 6 0 0112 0"/><path d="M5 16h14"/><path d="M9 8V4M12 8V4M15 8V4"/></svg>
@@ -1912,7 +1946,7 @@ footer p {
 
       <div class="glass-panel client-card">
         <div class="client-img-wrap">
-            <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&q=80&w=500&h=300" alt="Kantin Institusi" class="img-cover" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&q=80&w=500&h=300" alt="Kantin Institusi" class="img-cover" width="500" height="300" loading="lazy">
         </div>
         <div class="client-icon" style="margin-top:-35px; position: relative; z-index: 2; background: var(--surface); box-shadow: var(--shadow-sm);">
           <svg viewBox="0 0 24 24"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/><path d="M4 21h16"/></svg>
@@ -1923,7 +1957,7 @@ footer p {
 
       <div class="glass-panel client-card">
         <div class="client-img-wrap">
-            <img src="https://images.unsplash.com/photo-1621245003310-4f5145b08e5e?auto=format&fit=crop&q=80&w=500&h=300" alt="Produsen Pangan" class="img-cover" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1621245003310-4f5145b08e5e?auto=format&fit=crop&q=80&w=500&h=300" alt="Produsen Pangan" class="img-cover" width="500" height="300" loading="lazy">
         </div>
         <div class="client-icon" style="margin-top:-35px; position: relative; z-index: 2; background: var(--surface); box-shadow: var(--shadow-sm);">
           <svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="11" rx="2"/><path d="M7 9V6a5 5 0 0110 0v3"/><path d="M12 13v3"/></svg>
@@ -1960,7 +1994,7 @@ footer p {
             <li class="disabled"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Tanpa Layanan Pest Control</li>
           </ul>
         </div>
-        <a class="btn btn-ghost" style="width:100%" href="https://wa.me/6281110232224?text=Halo%20Sostain,%20saya%20tertarik%20dengan%20Paket%20Silver" target="_blank" rel="noopener">Pilih Paket Silver</a>
+        <a class="btn btn-ghost wa-cta-link" style="width:100%" data-wa-msg="Halo Sostain, saya tertarik dengan Paket Silver" href="#" target="_blank" rel="noopener">Pilih Paket Silver</a>
       </div>
 
       <!-- Gold (Featured) -->
@@ -1978,7 +2012,7 @@ footer p {
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><strong>Platform NutriPlan: Akses 12 bulan</strong></li>
           </ul>
         </div>
-        <a class="btn btn-accent" style="width:100%" href="https://wa.me/6281110232224?text=Halo%20Sostain,%20saya%20ingin%20berlangganan%20Paket%20Gold" target="_blank" rel="noopener">Pilih Paket Gold</a>
+        <a class="btn btn-accent wa-cta-link" style="width:100%" data-wa-msg="Halo Sostain, saya ingin berlangganan Paket Gold" href="#" target="_blank" rel="noopener">Pilih Paket Gold</a>
       </div>
 
       <!-- Platinum -->
@@ -1995,7 +2029,7 @@ footer p {
             <li class="disabled"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Tanpa Deep Cleaning</li>
           </ul>
         </div>
-        <a class="btn btn-ghost" style="width:100%" href="https://wa.me/6281110232224?text=Halo%20Sostain,%20saya%20tertarik%20dengan%20Paket%20Platinum" target="_blank" rel="noopener">Pilih Platinum</a>
+        <a class="btn btn-ghost wa-cta-link" style="width:100%" data-wa-msg="Halo Sostain, saya tertarik dengan Paket Platinum" href="#" target="_blank" rel="noopener">Pilih Platinum</a>
       </div>
     </div>
 
@@ -2201,7 +2235,7 @@ footer p {
       </div>
 
       <div class="contact-channels">
-        <a class="channel-link" href="https://wa.me/6281110232224" target="_blank" rel="noopener">
+        <a class="channel-link wa-cta-link" href="#" target="_blank" rel="noopener">
           <div class="channel-icon">
             <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           </div>
@@ -2256,6 +2290,42 @@ footer p {
 </footer>
 
 <script>
+// Single source of truth for the WhatsApp number, used by every wa.me
+// link and by the WhatsApp message generator below.
+const WA_NUMBER = '6281110232224';
+
+// Fill every link marked with .wa-cta-link using WA_NUMBER, so the
+// number only has to be updated in one place.
+document.querySelectorAll('.wa-cta-link').forEach(function (link) {
+  const msg = link.getAttribute('data-wa-msg');
+  link.href = 'https://wa.me/' + WA_NUMBER + (msg ? '?text=' + encodeURIComponent(msg) : '');
+});
+
+// Mobile nav toggle
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMobileMenu');
+  const icon = document.getElementById('navToggleIcon');
+  if (!toggle || !menu) return;
+
+  const openIcon = '<line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>';
+  const closeIcon = '<line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/>';
+
+  function setOpen(isOpen) {
+    menu.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    icon.innerHTML = isOpen ? closeIcon : openIcon;
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!menu.classList.contains('open'));
+  });
+
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+})();
+
 // Interactive Food Temp Monitor
 (function() {
   const slider = document.getElementById('temp');
@@ -2376,7 +2446,7 @@ function launchWhatsApp() {
   const kType = document.getElementById('kitchenType').value;
   const kPortion = document.getElementById('kitchenPortion').value.trim() || 'Belum dihitung';
   const message = encodeURIComponent(`Halo tim Sostain, saya ingin konsultasi pendampingan keamanan pangan:\n\n• Jenis Dapur: ${kType}\n• Estimasi Porsi: ${kPortion}\n\nMohon informasi langkah pendampingan dan penjadwalan kunjungannya. Terima kasih.`);
-  window.open(`https://wa.me/6281110232224?text=${message}`, '_blank');
+  window.open(`https://wa.me/${WA_NUMBER}?text=${message}`, '_blank');
 }
 </script>
 </body>
