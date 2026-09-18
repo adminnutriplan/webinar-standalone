@@ -320,6 +320,153 @@ nav.main-menu a:hover {
   display: flex;
 }
 
+/* NAV DROPDOWN: Layanan > Webinar/Workshop > single item */
+.nav-dd {
+  position: relative;
+}
+
+.nav-dd-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  font: inherit;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 6px 2px;
+}
+
+.nav-dd-trigger:hover {
+  color: var(--brand);
+}
+
+.nav-dd-caret {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-dd.open > .nav-dd-trigger {
+  color: var(--brand);
+}
+
+.nav-dd.open > .nav-dd-trigger .nav-dd-caret {
+  transform: rotate(180deg);
+}
+
+.nav-dd-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  min-width: 250px;
+  background: #FFF;
+  border: 1px solid rgba(11, 45, 30, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 10px;
+  z-index: 150;
+}
+
+.nav-dd.open > .nav-dd-panel {
+  display: block;
+}
+
+.nav-dd-subtrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: none;
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.nav-dd-subtrigger:hover {
+  background: rgba(20, 99, 66, 0.08);
+}
+
+.nav-dd-subtrigger .nav-dd-caret {
+  transform: rotate(-90deg);
+}
+
+.nav-dd-group.open .nav-dd-subtrigger .nav-dd-caret {
+  transform: rotate(0deg);
+}
+
+.nav-dd-subpanel {
+  display: none;
+  padding: 2px 6px 8px 18px;
+}
+
+.nav-dd-group.open .nav-dd-subpanel {
+  display: block;
+}
+
+.nav-dd-link {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav-dd-link:hover {
+  background: rgba(20, 99, 66, 0.06);
+  color: var(--brand);
+}
+
+.nav-dd-link.is-placeholder {
+  cursor: not-allowed;
+}
+
+.nav-dd-placeholder-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--accent-dark);
+}
+
+/* Inside the mobile menu the dropdown becomes an inline accordion
+   instead of a floating panel. */
+.nav-mobile-menu .nav-dd-trigger {
+  width: 100%;
+  justify-content: space-between;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 12px 10px;
+  border-radius: 12px;
+}
+
+.nav-mobile-menu .nav-dd-trigger:hover {
+  background: rgba(20, 99, 66, 0.08);
+}
+
+.nav-mobile-menu .nav-dd-panel {
+  position: static;
+  min-width: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 2px 0 2px 10px;
+}
+
 /* HERO SECTION */
 .hero-section {
   padding: 20px 0 54px;
@@ -1554,7 +1701,35 @@ footer p {
         <img src="Logo%20Sostain/Logo%20Sostain-Main.svg" alt="Sostain" class="brand-logo-img">
       </a>
       <nav class="main-menu">
-        <a href="#layanan">Layanan</a>
+        <div class="nav-dd" data-dd>
+          <button class="nav-dd-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+            Layanan
+            <svg class="nav-dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dd-panel">
+            <div class="nav-dd-group" data-dd-group>
+              <button class="nav-dd-subtrigger" type="button" aria-expanded="false">
+                Webinar
+                <svg class="nav-dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="nav-dd-subpanel">
+                <a class="nav-dd-link" href="webinar/index.html">Ruang Peserta</a>
+              </div>
+            </div>
+            <div class="nav-dd-group" data-dd-group>
+              <button class="nav-dd-subtrigger" type="button" aria-expanded="false">
+                Workshop
+                <svg class="nav-dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="nav-dd-subpanel">
+                <a class="nav-dd-link is-placeholder" href="#" data-dd-placeholder>
+                  Workshop Penyusunan Dokumen HACCP
+                  <span class="nav-dd-placeholder-tag">Segera Hadir</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
         <a href="#sistem">Sistem & Alur</a>
         <a href="#klien">Segmen Dapur</a>
         <a href="#paket">Paket Harga</a>
@@ -1571,7 +1746,35 @@ footer p {
       </div>
     </div>
     <nav class="glass-panel nav-mobile-menu" id="navMobileMenu">
-      <a href="#layanan">Layanan</a>
+      <div class="nav-dd" data-dd>
+        <button class="nav-dd-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+          Layanan
+          <svg class="nav-dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dd-panel">
+          <div class="nav-dd-group" data-dd-group>
+            <button class="nav-dd-subtrigger" type="button" aria-expanded="false">
+              Webinar
+              <svg class="nav-dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nav-dd-subpanel">
+              <a class="nav-dd-link" href="webinar/index.html">Ruang Peserta</a>
+            </div>
+          </div>
+          <div class="nav-dd-group" data-dd-group>
+            <button class="nav-dd-subtrigger" type="button" aria-expanded="false">
+              Workshop
+              <svg class="nav-dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="nav-dd-subpanel">
+              <a class="nav-dd-link is-placeholder" href="#" data-dd-placeholder>
+                Workshop Penyusunan Dokumen HACCP
+                <span class="nav-dd-placeholder-tag">Segera Hadir</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       <a href="#sistem">Sistem & Alur</a>
       <a href="#klien">Segmen Dapur</a>
       <a href="#paket">Paket Harga</a>
@@ -2315,6 +2518,11 @@ document.querySelectorAll('.wa-cta-link').forEach(function (link) {
     menu.classList.toggle('open', isOpen);
     toggle.setAttribute('aria-expanded', String(isOpen));
     icon.innerHTML = isOpen ? closeIcon : openIcon;
+    if (!isOpen) {
+      menu.querySelectorAll('.nav-dd.open, .nav-dd-group.open').forEach(function (el) {
+        el.classList.remove('open');
+      });
+    }
   }
 
   toggle.addEventListener('click', function () {
@@ -2323,6 +2531,60 @@ document.querySelectorAll('.wa-cta-link').forEach(function (link) {
 
   menu.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () { setOpen(false); });
+  });
+})();
+
+// Nav dropdown: Layanan > Webinar/Workshop > single item.
+// Each .nav-dd (one in the desktop menu, one in the mobile menu) is
+// handled independently so the two copies don't affect each other.
+(function() {
+  document.querySelectorAll('[data-dd]').forEach(function (dd) {
+    const trigger = dd.querySelector(':scope > .nav-dd-trigger');
+
+    function setDdOpen(isOpen) {
+      dd.classList.toggle('open', isOpen);
+      trigger.setAttribute('aria-expanded', String(isOpen));
+      if (!isOpen) {
+        dd.querySelectorAll('[data-dd-group]').forEach(function (group) {
+          setGroupOpen(group, false);
+        });
+      }
+    }
+
+    function setGroupOpen(group, isOpen) {
+      group.classList.toggle('open', isOpen);
+      group.querySelector('.nav-dd-subtrigger').setAttribute('aria-expanded', String(isOpen));
+    }
+
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setDdOpen(!dd.classList.contains('open'));
+    });
+
+    dd.querySelectorAll('[data-dd-group]').forEach(function (group) {
+      const subtrigger = group.querySelector('.nav-dd-subtrigger');
+      subtrigger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const willOpen = !group.classList.contains('open');
+        dd.querySelectorAll('[data-dd-group]').forEach(function (g) { setGroupOpen(g, false); });
+        setGroupOpen(group, willOpen);
+      });
+    });
+
+    // Not wired up yet — clicking it shouldn't navigate anywhere.
+    dd.querySelectorAll('[data-dd-placeholder]').forEach(function (link) {
+      link.addEventListener('click', function (e) { e.preventDefault(); });
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('[data-dd].open').forEach(function (dd) {
+      if (!dd.contains(e.target)) {
+        dd.classList.remove('open');
+        dd.querySelector(':scope > .nav-dd-trigger').setAttribute('aria-expanded', 'false');
+        dd.querySelectorAll('[data-dd-group]').forEach(function (g) { g.classList.remove('open'); });
+      }
+    });
   });
 })();
 
