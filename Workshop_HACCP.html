@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workshop Penyusunan Dokumen HACCP | Sostain x NutriPlan</title>
+<meta name="description" content="Workshop Online Penyusunan Dokumen HACCP & Keamanan Pangan Dapur bersama Sostain & NutriPlan. Pelatihan terstruktur 2 hari untuk kesiapan audit & operasional dapur.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+/* ==========================================================================
+   DESAIN TEMPLATE SESUAI PANDUAN BRAND SOSTAIN.ID
+   ========================================================================== */
+:root{
+  --paper:#FFFFFF;
+  --surface:#FFFFFF;
+  --surface-alt:#F4F9F6;
+
+  --ink:#0F172A;
+  --ink-soft:#475569;
+  --ink-faint:#94A3B8;
+  --line:#E2E8F0;
+  --line-strong:#CBD5E1;
+
+  /* Sostain Primary Deep Emerald & Accents */
+  --s-900:#004D40;
+  --s-700:#00695C;
+  --s-500:#10B981;
+  --s-100:#E6F4F1;
+  --s-50:#F0FDF4;
+
+  /* NutriPlan Secondary Orange/Gold */
+  --n-700:#D97706;
+  --n-600:#F59E0B;
+  --n-100:#FEF3C7;
+
+  --radius-s:10px;
+  --radius-m:16px;
+  --radius-l:24px;
+
+  --wrap:1140px;
+  --gutter:24px;
+
+  --shadow-card:0 4px 12px rgba(0, 77, 64, 0.04);
+  --shadow-lift:0 12px 28px rgba(0, 77, 64, 0.08);
+
+  --font:'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:88px}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+a{color:inherit}
+
+.wrap{max-width:var(--wrap); margin:0 auto; padding-inline:var(--gutter)}
+.section{padding-block:88px; background:#FFFFFF}
+.section--cream{background:var(--surface-alt); border-block:1px solid var(--line)}
+@media (max-width:760px){
+  .section{padding-block:60px}
+}
+
+/* --- Tipografi --- */
+h1,h2,h3{margin:0; line-height:1.2; letter-spacing:-.02em; font-weight:800; text-align:left}
+h1{font-size:clamp(2.1rem, 1.4rem + 3vw, 3.2rem); letter-spacing:-.03em}
+h2{font-size:clamp(1.6rem, 1.2rem + 1.7vw, 2.4rem)}
+h3{font-size:1.15rem; font-weight:700; letter-spacing:-.01em}
+p{margin:0; text-align:left}
+.lede{font-size:clamp(1rem,.95rem + .3vw,1.15rem); color:var(--ink-soft); max-width:65ch; text-align:left}
+.fine{font-size:.875rem; color:var(--ink-faint); line-height:1.6}
+
+.sec-header{
+  text-align:left;
+  max-width:65ch;
+  margin-bottom:48px;
+  padding:0;
+}
+
+.eyebrow{
+  display:inline-block; margin-bottom:14px;
+  font-size:.85rem; font-weight:800; color:var(--s-700); text-transform:uppercase; letter-spacing:.05em;
+  position:relative; padding-left:26px; text-align:left;
+}
+.eyebrow::before{
+  content:''; position:absolute; left:0; top:.55em;
+  width:18px; height:3px; background:var(--s-500); border-radius:2px;
+}
+
+/* --- Tombol --- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 24px; border-radius:999px; border:1.5px solid transparent;
+  font:inherit; font-weight:700; font-size:.95rem; letter-spacing:-.01em;
+  text-decoration:none; cursor:pointer; transition:all .25s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn--nutri{background:var(--n-600); color:#fff; box-shadow:0 4px 14px rgba(245, 158, 11, 0.3)}
+.btn--nutri:hover{background:var(--n-700); transform:translateY(-2px); box-shadow:0 6px 18px rgba(245, 158, 11, 0.4)}
+.btn--sostain{background:var(--s-900); color:#fff; box-shadow:0 4px 14px rgba(0, 77, 64, 0.3)}
+.btn--sostain:hover{background:var(--s-700); transform:translateY(-2px); box-shadow:0 6px 18px rgba(0, 77, 64, 0.4)}
+.btn--ghost{background:rgba(255,255,255,0.7); color:var(--s-900); border-color:var(--line-strong); backdrop-filter:blur(8px)}
+.btn--ghost:hover{border-color:var(--s-700); background:var(--s-100)}
+.btn--sm{padding:8px 18px; font-size:.85rem}
+.btn-row{display:flex; flex-wrap:wrap; gap:12px}
+
+/* --- NAVIGASI FLOATING GLASS HEADER (KEMBALI KE AWAL BERSIH) --- */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255, 255, 255, 0.85);
+  backdrop-filter:blur(18px) saturate(180%);
+  -webkit-backdrop-filter:blur(18px) saturate(180%);
+  border-bottom:1px solid rgba(226, 232, 240, 0.8);
+  box-shadow:0 4px 20px rgba(0, 0, 0, 0.03);
+}
+.nav__inner{
+  max-width:var(--wrap); margin:0 auto; padding:10px var(--gutter);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand{display:flex; align-items:center; gap:8px; text-decoration:none; flex-shrink:0}
+.brand__logo-img{
+  height:32px; width:auto; display:block;
+}
+.brand__tag{
+  font-size:.7rem; font-weight:700; color:var(--s-900);
+  background:rgba(230, 244, 241, 0.9); padding:4px 10px; border-radius:999px; white-space:nowrap;
+  border:1px solid rgba(16, 185, 129, 0.2);
+}
+.nav__actions{display:flex; gap:8px; align-items:center}
+
+.desktop-only{display:inline-flex}
+@media (max-width:640px){
+  .desktop-only{display:none !important}
+  .brand__logo-img{height:28px}
+  .nav__inner{padding:10px 16px}
+  .btn--sm{padding:8px 14px; font-size:.8rem}
+}
+
+/* --- FLOATING WHATSAPP BUTTON --- */
+.float-wa{
+  position:fixed; bottom:24px; right:24px; z-index:99;
+  display:inline-flex; align-items:center; gap:10px;
+  background:#25D366; color:#FFFFFF; padding:12px 20px; border-radius:999px;
+  font-size:.88rem; font-weight:800; text-decoration:none;
+  box-shadow:0 8px 24px rgba(37, 211, 102, 0.4);
+  transition:all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border:2px solid #FFFFFF;
+}
+.float-wa:hover{
+  transform:scale(1.05) translateY(-3px);
+  background:#20BA5A; box-shadow:0 12px 28px rgba(37, 211, 102, 0.5);
+}
+@media (max-width:640px){
+  .float-wa{
+    bottom:16px; right:16px; padding:10px 16px; font-size:.82rem;
+  }
+  .float-wa span{display:inline-block}
+}
+
+/* --- SECTION PERTAMA (HERO) DENGAN GLOW BLUR AMBIENT VISUAL --- */
+.hero{
+  background:#FFFFFF;
+  padding-block:64px 48px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+
+/* Glow Oranye Luas di Kanan Atas Section Pertama */
+.hero::before{
+  content:''; position:absolute; top:-100px; right:-100px;
+  width:450px; height:450px;
+  background:radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, rgba(245, 158, 11, 0) 70%);
+  filter:blur(60px); pointer-events:none; z-index:0;
+}
+
+/* Glow Hijau Luas di Kiri Bawah Section Pertama */
+.hero::after{
+  content:''; position:absolute; bottom:-150px; left:-150px;
+  width:450px; height:450px;
+  background:radial-gradient(circle, rgba(16, 185, 129, 0.20) 0%, rgba(16, 185, 129, 0) 70%);
+  filter:blur(60px); pointer-events:none; z-index:0;
+}
+
+.hero__grid{
+  display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:48px; align-items:center;
+  position:relative; z-index:1;
+}
+.hero h1{margin-bottom:20px; color:var(--s-900)}
+.hero .lede{margin-bottom:28px}
+
+.event-card{
+  background:rgba(255, 255, 255, 0.88);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:2px solid #059669; border-radius:var(--radius-l);
+  padding:28px; box-shadow:0 20px 30px -10px rgba(0, 77, 64, 0.08);
+  display:flex; flex-direction:column; gap:20px; position:relative; overflow:hidden;
+}
+.event-card::before{
+  content:''; position:absolute; top:0; left:0; width:100%; height:6px;
+  background:linear-gradient(90deg, #059669 0%, #10B981 50%, #F59E0B 100%);
+}
+.event-badges{display:flex; flex-wrap:wrap; gap:10px}
+.badge-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(230, 244, 241, 0.9); color:#004D40; font-weight:700; font-size:.82rem;
+  padding:8px 16px; border-radius:999px; border:1px solid rgba(0, 77, 64, 0.1);
+}
+.badge-pill--zoom{background:rgba(224, 242, 254, 0.9); color:#0369A1; border-color:rgba(3, 105, 161, 0.1)}
+
+.event-price-card{
+  background:linear-gradient(135deg, #004D40 0%, #00695C 100%);
+  border-radius:18px; padding:22px; color:#fff; text-align:center;
+  box-shadow:0 12px 20px -4px rgba(0, 77, 64, 0.25);
+}
+.event-price-card .price{font-size:2.2rem; font-weight:800; color:#F59E0B; line-height:1}
+.event-price-card .quota{
+  display:inline-block; margin-top:8px; background:rgba(255,255,255,0.15);
+  font-size:.8rem; font-weight:700; padding:4px 14px; border-radius:10px; color:#fff;
+}
+
+.countdown-mini{
+  background:rgba(248, 250, 252, 0.85); border:1px solid #E2E8F0;
+  border-radius:var(--radius-m); padding:12px; text-align:center;
+}
+.countdown-mini__title{font-size:.7rem; font-weight:800; text-transform:uppercase; color:#475569; margin-bottom:8px; letter-spacing:.05em}
+.countdown-mini__grid{display:grid; grid-template-columns:repeat(4,1fr); gap:8px}
+.countdown-mini__item{background:#fff; padding:6px; border-radius:8px; border:1px solid #CBD5E1}
+.countdown-mini__num{font-size:1.15rem; font-weight:800; color:#004D40; display:block; line-height:1}
+.countdown-mini__unit{font-size:.65rem; font-weight:700; text-transform:uppercase; color:#94A3B8; display:block}
+
+@media (max-width:960px){
+  .hero__grid{grid-template-columns:1fr; gap:36px}
+}
+
+/* --- Cards Grid Style --- */
+.card-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px}
+.card-grid--2{grid-template-columns:repeat(2, minmax(0,1fr))}
+@media (max-width:960px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.card-grid, .card-grid--2{grid-template-columns:1fr}}
+
+.info-card{
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius-l); padding:28px; display:flex; flex-direction:column;
+  box-shadow:var(--shadow-card); transition:all .25s ease;
+}
+.info-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lift); border-color:var(--s-500)}
+.info-card__icon{
+  width:48px; height:48px; border-radius:14px; background:var(--s-100); color:var(--s-900);
+  display:grid; place-items:center; margin-bottom:18px; flex-shrink:0;
+}
+.info-card__icon--orange{background:var(--n-100); color:var(--n-700)}
+.info-card h3{margin-bottom:10px; color:var(--s-900)}
+.info-card p{font-size:.92rem; color:var(--ink-soft); line-height:1.6}
+
+/* --- Narasumber Cards --- */
+.speaker-card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius-l);
+  padding:32px 24px; text-align:left; box-shadow:var(--shadow-card); transition:all .25s ease;
+  display:flex; flex-direction:column; align-items:flex-start;
+}
+.speaker-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lift); border-color:var(--s-500)}
+.speaker-img-wrap{
+  width:96px; height:96px; border-radius:50%; overflow:hidden; border:3px solid var(--s-500);
+  margin-bottom:20px; flex-shrink:0; background:var(--s-100);
+}
+.speaker-img-wrap img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.speaker-card h3{font-size:1.15rem; font-weight:800; color:var(--s-900); margin-bottom:4px; text-align:left}
+.speaker-role{font-size:.82rem; font-weight:700; color:#059669; margin-bottom:12px; text-align:left}
+.speaker-desc{font-size:.88rem; color:var(--ink-soft); line-height:1.6; text-align:left}
+
+/* --- Agenda Section --- */
+.agenda-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px}
+@media (max-width:768px){.agenda-grid{grid-template-columns:1fr}}
+
+.agenda-card{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-l);
+  padding:32px; position:relative; overflow:hidden; box-shadow:var(--shadow-card);
+}
+.agenda-card__badge{
+  display:inline-block; padding:4px 12px; border-radius:999px; font-size:.75rem; font-weight:800;
+  text-transform:uppercase; background:var(--s-900); color:#fff; margin-bottom:16px;
+}
+.agenda-card--day2 .agenda-card__badge{background:var(--n-600)}
+.agenda-list{list-style:none; padding:0; margin:16px 0 0; display:grid; gap:12px}
+.agenda-list li{display:flex; gap:10px; font-size:.93rem; color:var(--ink-soft)}
+.agenda-list svg{color:var(--s-500); flex-shrink:0; margin-top:3px}
+
+/* --- Output Card --- */
+.output-card{
+  background:#FFFFFF;
+  border:2px solid var(--s-500); border-radius:var(--radius-l);
+  padding:36px; box-shadow:var(--shadow-lift); margin-top:40px;
+}
+.output-card__header{
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+  border-bottom:1px solid var(--line); padding-bottom:20px; margin-bottom:24px;
+}
+.output-card__title{font-size:1.3rem; font-weight:800; color:var(--s-900); display:flex; align-items:center; gap:10px}
+.output-badge{
+  background:var(--n-100); color:var(--n-700); border:1px solid var(--n-600);
+  font-size:.82rem; font-weight:800; padding:6px 16px; border-radius:999px;
+}
+.output-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px}
+@media (max-width:640px){.output-grid{grid-template-columns:1fr}}
+.output-item{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius-m);
+  padding:20px; display:flex; items-center:center; gap:16px; box-shadow:var(--shadow-card);
+}
+.output-item__icon{
+  width:44px; height:44px; border-radius:12px; background:var(--s-100); color:var(--s-700);
+  display:grid; place-items:center; flex-shrink:0;
+}
+.output-item__text h4{margin:0; font-size:1.02rem; font-weight:800; color:var(--s-900); text-align:left}
+.output-item__text p{margin:2px 0 0; font-size:.85rem; color:var(--ink-soft); text-align:left}
+
+/* --- CLOSING CTA SECTION --- */
+.closing-cta{
+  background:linear-gradient(135deg, #004D40 0%, #00695C 100%);
+  color:#FFFFFF; padding-block:72px; text-align:center; position:relative; overflow:hidden;
+}
+.closing-cta::before{
+  content:''; position:absolute; top:-50%; left:-20%; width:140%; height:200%;
+  background:radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 60%);
+  pointer-events:none;
+}
+.closing-cta__inner{
+  max-width:760px; margin:0 auto; padding-inline:var(--gutter); position:relative; z-index:2;
+}
+.closing-cta h2{
+  font-size:clamp(1.8rem, 1.4rem + 2vw, 2.6rem); color:#FFFFFF; margin-bottom:16px; text-align:center;
+}
+.closing-cta p{
+  font-size:1.1rem; color:rgba(255, 255, 255, 0.88); margin-bottom:32px; text-align:center; max-width:58ch; margin-inline:auto;
+}
+
+/* --- FAQ SECTION ACCORDION --- */
+.faq-wrap{
+  max-width:760px; margin:0 auto;
+}
+.faq-list{
+  display:flex; flex-direction:column; gap:12px;
+}
+.faq-item{
+  background:#FFFFFF; border:1px solid #E2E8F0; border-radius:var(--radius-m);
+  overflow:hidden; box-shadow:0 2px 8px rgba(0, 77, 64, 0.03); transition:all .2s ease;
+}
+.faq-item[open]{
+  border-color:var(--s-500); box-shadow:0 8px 16px rgba(0, 77, 64, 0.06);
+}
+.faq-summary{
+  padding:20px 24px; cursor:pointer; font-weight:700; font-size:1.02rem; color:var(--s-900);
+  list-style:none; display:flex; justify-content:space-between; align-items:center; text-align:left;
+}
+.faq-summary::-webkit-details-marker{display:none}
+.faq-icon{
+  width:24px; height:24px; border-radius:50%; background:var(--s-100); color:var(--s-700);
+  display:grid; place-items:center; font-size:1.2rem; font-weight:700; shrink:0; flex-shrink:0; transition:transform .2s ease;
+}
+.faq-item[open] .faq-icon{
+  background:var(--s-500); color:#fff; transform:rotate(45deg);
+}
+.faq-content{
+  padding:0 24px 20px; font-size:.94rem; color:var(--ink-soft); line-height:1.6; text-align:left; border-top:1px dashed #E2E8F0; padding-top:14px;
+}
+
+/* --- SIMPLE FOOTER --- */
+.footer-simple{
+  background:var(--s-900); border-top:1px solid rgba(255,255,255,0.1);
+  padding-block:36px; color:rgba(255,255,255,0.85);
+  display:flex; justify-content:center; align-items:center; text-align:center;
+}
+.footer-simple .wrap{
+  width:100%; display:flex; flex-direction:column; align-items:center; text-align:center;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================== FLOATING WHATSAPP BUTTON ============================== -->
+<a href="https://wa.me/6281116607152?text=Halo%20Admin%20Sostain,%20saya%20ingin%20konsultasi%20mengenai%20Workshop%20HACCP" target="_blank" rel="noopener" class="float-wa" aria-label="Konsultasi via WhatsApp">
+  <i data-lucide="message-circle" class="w-5 h-5"></i>
+  <span>Konsultasi WA</span>
+</a>
+
+<!-- ============================== FLOATING GLASS NAVIGASI ============================== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="https://www.sostain.id/">
+      <!-- SVG Logo Resmi Sostain -->
+      <img src="https://www.sostain.id/Logo%20Sostain/Logo%20Sostain-Main.svg" alt="Sostain Indonesia Logo" class="brand__logo-img">
+      <span class="brand__tag desktop-only">Workshop HACCP</span>
+    </a>
+    <div class="nav__actions">
+      <!-- Button Utama di HP & Desktop -->
+      <a class="btn btn--nutri btn--sm" href="https://forms.google.com" target="_blank" rel="noopener">
+        <i data-lucide="file-text" class="w-4 h-4"></i> Daftar
+      </a>
+      <!-- Button Sekunder (Hanya Tampil di Desktop) -->
+      <a class="btn btn--ghost btn--sm desktop-only" href="https://wa.me/6281116607152?text=Halo%20Admin%20Sostain,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20dapur" target="_blank" rel="noopener">
+        <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i> Konsultasi (WhatsApp)
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ================================ HERO (SECTION 1) ================================ -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">KELOLA DAPUR LEBIH AMAN</p>
+      <h1>Workshop Penyusunan Dokumen HACCP</h1>
+      <p class="lede">
+        Terapkan standar keamanan pangan untuk dapur Anda dan hindari terjadinya kasus keracunan. Pelajari penyusunan dokumen HACCP secara terstruktur, praktis, dan siap diterapkan langsung di dapur operasional Anda.
+      </p>
+      
+      <div class="btn-row">
+        <a class="btn btn--nutri" href="https://forms.google.com" target="_blank" rel="noopener">
+          Daftar Workshop
+        </a>
+        <a class="btn btn--sostain" href="https://wa.me/6281116607152?text=Halo%20Admin%20Sostain,%20saya%20ingin%20konsultasi%20sebelum%20daftar%20Workshop%20HACCP" target="_blank" rel="noopener">
+          Konsultasi via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- EVENT CARD HEADER -->
+    <div class="event-card">
+      <div class="event-badges">
+        <span class="badge-pill">
+          <i data-lucide="calendar" class="w-4 h-4"></i> 10 - 11 Oktober 2026
+        </span>
+        <span class="badge-pill">
+          <i data-lucide="clock" class="w-4 h-4"></i> 09.00 - 15.00 WIB
+        </span>
+        <span class="badge-pill badge-pill--zoom">
+          <i data-lucide="video" class="w-4 h-4"></i> Online via Zoom
+        </span>
+      </div>
+
+      <div class="event-price-card">
+        <div style="font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:rgba(255,255,255,.8); margin-bottom:4px">Investasi Pelatihan</div>
+        <div class="price">Rp 250.000 <span style="font-size:1rem; color:#fff; font-weight:400">/ orang</span></div>
+        <div class="quota">Kuota Terbatas: Hanya 100 Peserta Pertama</div>
+      </div>
+
+      <div class="countdown-mini">
+        <div class="countdown-mini__title">Pelaksanaan Acara Dalam:</div>
+        <div class="countdown-mini__grid">
+          <div class="countdown-mini__item">
+            <span id="days" class="countdown-mini__num">00</span>
+            <span class="countdown-mini__unit">Hari</span>
+          </div>
+          <div class="countdown-mini__item">
+            <span id="hours" class="countdown-mini__num">00</span>
+            <span class="countdown-mini__unit">Jam</span>
+          </div>
+          <div class="countdown-mini__item">
+            <span id="minutes" class="countdown-mini__num">00</span>
+            <span class="countdown-mini__unit">Menit</span>
+          </div>
+          <div class="countdown-mini__item">
+            <span id="seconds" class="countdown-mini__num">00</span>
+            <span class="countdown-mini__unit">Detik</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 2: PERMASALAHAN ================= -->
+<section class="section section--cream" id="masalah">
+  <div class="wrap">
+    <div class="sec-header">
+      <p class="eyebrow">MASALAH DAPUR OPERASIONAL</p>
+      <h2>Mengapa Dapur Anda Sangat Membutuhkan Dokumen HACCP?</h2>
+    </div>
+
+    <div class="card-grid">
+      <div class="info-card">
+        <div class="info-card__icon info-card__icon--orange">
+          <i data-lucide="alert-octagon" class="w-6 h-6"></i>
+        </div>
+        <h3>Dapur Terancam Suspend</h3>
+        <p>Dapur terancam suspend atau kena sanksi karena operasional belum memenuhi standar keamanan pangan sesuai regulasi BGN/Kemenkes.</p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card__icon">
+          <i data-lucide="shield-alert" class="w-6 h-6"></i>
+        </div>
+        <h3>Belum Menerapkan HACCP</h3>
+        <p>Kesulitan memahami Titik Kendali Kritis (Critical Control Point) yang wajib diawasi ketat untuk mencegah kontaminasi masakan.</p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card__icon info-card__icon--orange">
+          <i data-lucide="file-x" class="w-6 h-6"></i>
+        </div>
+        <h3>Formulir Pemantauan Tidak Terstruktur</h3>
+        <p>Tidak memiliki worksheet yang menyesuaikan kebutuhan dapur, sehingga operasional dapur menjadi berantakan dan sulit diverifikasi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION SEGMEN TARGET ================= -->
+<section class="section" id="segmen">
+  <div class="wrap">
+    <div class="sec-header">
+      <p class="eyebrow">TARGET PESERTA</p>
+      <h2>Siapa Yang Cocok Mengikuti Workshop Ini?</h2>
+    </div>
+
+    <div class="card-grid card-grid--2">
+      <div class="info-card">
+        <div class="info-card__icon">
+          <i data-lucide="user-check" class="w-6 h-6"></i>
+        </div>
+        <h3>Ahli Gizi & Kepala SPPG</h3>
+        <p>Pengelola dan penanggung jawab teknis dapur Satuan Pelayanan Pemenuhan Gizi yang wajib memastikan penerapan standar Higiene Sanitasi dan keamanan pangan di lapangan.</p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card__icon info-card__icon--orange">
+          <i data-lucide="chef-hat" class="w-6 h-6"></i>
+        </div>
+        <h3>Pengelola Catering & F&B Manager</h3>
+        <p>Pemilik usaha jasa boga dan pengelola dapur komersial yang ingin meningkatkan standar keamanan sajian, kelayakan sertifikasi, dan kepercayaan konsumen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION NARASUMBER ================= -->
+<section class="section section--cream" id="pemateri">
+  <div class="wrap">
+    <div class="sec-header">
+      <p class="eyebrow">TIM EXPERT & PRAKTISI</p>
+      <h2>Narasumber & Pemateri</h2>
+      <p class="lede">Narasumber ahli dan praktisi berpengalaman di bidang gizi dan keamanan pangan</p>
+    </div>
+
+    <div class="card-grid card-grid--2">
+      <div class="speaker-card">
+        <div class="speaker-img-wrap">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" alt="Foto Aomi Hazelia Dewi, S.Gz., MM">
+        </div>
+        <h3>Aomi Hazelia Dewi, S.Gz., MM</h3>
+        <p class="speaker-role">Konsultan Keamanan Pangan & Halal</p>
+        <p class="speaker-desc">
+          Fokus pada pendampingan gizi dan standar mutu dapur, serta formulasi penyusunan dokumen operasional higienis.
+        </p>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-img-wrap">
+          <img src="https://images.unsplash.com/photo-1580894732468-058f74791421?auto=format&fit=crop&q=80&w=300" alt="Foto Ibu Indah">
+        </div>
+        <h3>Ibu Indah</h3>
+        <p class="speaker-role">Praktisi Keamanan Pangan & HACCP</p>
+        <p class="speaker-desc">
+          Spesialis implementasi Sistem Manajemen Keamanan Pangan (SMKP) dan pengawasan prosedur sanitasi di lapangan.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AGENDA PELAKSANAAN ================= -->
+<section class="section" id="agenda">
+  <div class="wrap">
+    <div class="sec-header">
+      <p class="eyebrow">AGENDA TERSTRUKTUR</p>
+      <h2>Materi Workshop</h2>
+    </div>
+
+    <div class="agenda-grid">
+      <div class="agenda-card">
+        <span class="agenda-card__badge">HARI 1</span>
+        <h3>Introduction & Analisis Bahaya</h3>
+        <p class="fine" style="margin-top:4px">Sabtu, 10 Oktober 2026 • 09.00 - 15.00 WIB</p>
+        <ul class="agenda-list">
+          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Introduction Keamanan Pangan:</strong> Prinsip dasar HACCP dalam operasional.</span></li>
+          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>GMP & SLHS:</strong> Penerapan kelayakan higiene sanitasi & standar operasional.</span></li>
+          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Penyusunan Tim HACCP:</strong> Pembagian peran personel pengawas keamanan pangan.</span></li>
+          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Analisis Bahaya:</strong> Identifikasi potensi bahaya fisik, biologi, dan kimiawi.</span></li>
+        </ul>
+      </div>
+
+      <div class="agenda-card agenda-card--day2">
+        <span class="agenda-card__badge">HARI 2</span>
+        <h3>CCP & Workshop Dokumen HACCP</h3>
+        <p class="fine" style="margin-top:4px">Minggu, 11 Oktober 2026 • 09.00 - 15.00 WIB</p>
+        <ul class="agenda-list">
+          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Penentuan CCP:</strong> Penggunaan decision tree untuk titik kendali kritis.</span></li>
+          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Workshop Dokumen:</strong> Praktik pengisian worksheet & formulir pemantauan.</span></li>
+          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Evaluasi & Diskusi:</strong> Pembahasan kasus riil dapur dan pemantauan.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="output-card">
+      <div class="output-card__header">
+        <div class="output-card__title">
+          <i data-lucide="award" class="w-6 h-6 text-emerald-600"></i>
+          <span>Output Yang Anda Dapatkan</span>
+        </div>
+        <div class="output-badge">
+          Metode Evaluasi: Pre-test & Post-test
+        </div>
+      </div>
+
+      <div class="output-grid">
+        <div class="output-item">
+          <div class="output-item__icon">
+            <i data-lucide="file-badge" class="w-6 h-6"></i>
+          </div>
+          <div class="output-item__text">
+            <h4>Sertifikat Resmi Pelatihan</h4>
+            <p>E-Certificate resmi partisipasi pelatihan keamanan pangan dan HACCP.</p>
+          </div>
+        </div>
+
+        <div class="output-item">
+          <div class="output-item__icon" style="background:var(--n-100); color:var(--n-700)">
+            <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+          </div>
+          <div class="output-item__text">
+            <h4>Worksheet & Template Dokumen HACCP Siap Pakai</h4>
+            <p>Berkas modul dan formulir pemantauan yang bisa langsung disesuaikan di dapur Anda.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SECTION CLOSING CTA ================= -->
+<section class="closing-cta">
+  <div class="closing-cta__inner">
+    <h2>Kelola Dapur Lebih Aman Sekarang</h2>
+    <p>
+      Amankan slot workshop Anda sebelum kuota 100 peserta terpenuhi. Dapatkan bimbingan teknis penyusunan dokumen HACCP dan konsultasi langsung bersama pakar Sostain.
+    </p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn btn--nutri" href="https://forms.google.com" target="_blank" rel="noopener">
+        Daftar Workshop Sekarang
+      </a>
+      <a class="btn btn--sostain" style="background:#FFFFFF; color:#004D40" href="https://wa.me/6281116607152?text=Halo%20Admin%20Sostain,%20saya%20ingin%20konsultasi%20mengenai%20Workshop%20HACCP" target="_blank" rel="noopener">
+        Konsultasi via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION FAQ ================= -->
+<section class="section section--cream" id="faq">
+  <div class="wrap">
+    <div class="faq-wrap">
+      <div style="text-align:center; margin-bottom:36px">
+        <p class="eyebrow" style="padding-left:0;">BANTUAN</p>
+        <h2 style="text-align:center; font-size:2.2rem">Pertanyaan Umum Peserta</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span>Bagaimana cara mendapatkan sertifikat workshop?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-content">
+            E-Certificate pelatihan akan dikirimkan langsung via email terdaftar bagi peserta yang mengikuti seluruh rangkaian sesi serta menyelesaikan pengisian Pre-test & Post-test.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span>Apakah saya bisa mendapatkan rekaman jika berhalangan hadir?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-content">
+            Bisa. Seluruh peserta terdaftar akan mendapatkan akses rekaman pembelajaran penuh 2 hari, sehingga Anda dapat memutar ulang materi kapan saja.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span>Bagaimana cara pengisian formulir pendaftaran?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-content">
+            Pendaftaran dilakukan secara online melalui Google Form resmi Sostain. Setelah mengisi data, Anda akan menerima konfirmasi rincian pembayaran melalui WhatsApp admin.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span>Kapan Worksheet Dokumen HACCP akan dibagikan?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-content">
+            Template & Worksheet Dokumen HACCP berformat softcopy siap pakai akan dibagikan langsung pada sesi workshop Hari ke-2 untuk dipraktikkan bersama narasumber.
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer-simple">
+  <div class="wrap">
+    <div style="font-weight:800; font-size:1.05rem; color:#fff; margin-bottom:8px; text-align:center">
+      PT Kolaborasi Sostain Indonesia
+    </div>
+    <p style="font-size:.85rem; color:rgba(255,255,255,0.7); max-width:70ch; margin:0 auto; text-align:center">
+      Layanan Pendampingan Keamanan Pangan, Pest Control, Deep Cleaning, dan Aplikasi Perencanaan Menu NutriPlan.id
+    </p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  lucide.createIcons();
+
+  // Countdown Logic to 10 October 2026 09:00 WIB
+  const targetDate = new Date("2026-10-10T09:00:00+07:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    if (diff > 0) {
+      document.getElementById("days").innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+      document.getElementById("hours").innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+      document.getElementById("minutes").innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      document.getElementById("seconds").innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+    }
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+</body>
+</html>
