@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Workshop Penyusunan Dokumen HACCP | Sostain x NutriPlan</title>
 <meta name="description" content="Workshop Online Penyusunan Dokumen HACCP & Keamanan Pangan Dapur bersama Sostain & NutriPlan. Pelatihan terstruktur 2 hari untuk kesiapan audit & operasional dapur.">
+<link rel="icon" type="image/svg+xml" href="Logo%20Sostain/Logo%20Sostain-Second.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
@@ -289,23 +290,36 @@ p{margin:0; text-align:left}
 .info-card h3{margin-bottom:10px; color:var(--s-900)}
 .info-card p{font-size:.92rem; color:var(--ink-soft); line-height:1.6}
 
-/* --- Narasumber Cards --- */
+/* --- Narasumber Cards (Trendy) --- */
 .speaker-card{
   background:#fff; border:1px solid var(--line); border-radius:var(--radius-l);
-  padding:32px 24px; text-align:left; box-shadow:var(--shadow-card); transition:all .25s ease;
-  display:flex; flex-direction:column; align-items:flex-start;
+  overflow:hidden; box-shadow:var(--shadow-card); transition:all .3s ease;
+  display:flex; flex-direction:column; position:relative;
 }
-.speaker-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lift); border-color:var(--s-500)}
-.speaker-img-wrap{
-  width:96px; height:96px; border-radius:50%; overflow:hidden; border:3px solid var(--s-500);
-  margin-bottom:20px; flex-shrink:0; background:var(--s-100);
+.speaker-card::before{
+  content:''; position:absolute; top:0; left:0; width:100%; height:5px; z-index:2;
+  background:linear-gradient(90deg, #059669 0%, #10B981 50%, #F59E0B 100%);
 }
-.speaker-img-wrap img{
-  width:100%; height:100%; object-fit:cover; display:block;
+.speaker-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-lift); border-color:var(--s-500)}
+
+.speaker-photo{
+  position:relative; width:100%; aspect-ratio:4/5; overflow:hidden;
+  background:linear-gradient(160deg, var(--s-100) 0%, #EAF6F1 100%);
 }
-.speaker-card h3{font-size:1.15rem; font-weight:800; color:var(--s-900); margin-bottom:4px; text-align:left}
-.speaker-role{font-size:.82rem; font-weight:700; color:#059669; margin-bottom:12px; text-align:left}
-.speaker-desc{font-size:.88rem; color:var(--ink-soft); line-height:1.6; text-align:left}
+.speaker-photo img{
+  width:100%; height:100%; object-fit:cover; object-position:center top;
+  display:block; transition:transform .5s ease;
+}
+.speaker-card:hover .speaker-photo img{transform:scale(1.06)}
+
+.speaker-body{padding:26px 28px 30px; text-align:left}
+.speaker-role{
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--n-100); color:var(--n-700); font-size:.76rem; font-weight:800;
+  padding:6px 14px; border-radius:999px; margin-bottom:14px; text-transform:uppercase; letter-spacing:.03em;
+}
+.speaker-card h3{font-size:1.2rem; font-weight:800; color:var(--s-900); margin-bottom:10px; text-align:left}
+.speaker-desc{font-size:.9rem; color:var(--ink-soft); line-height:1.65; text-align:left}
 
 /* --- Agenda Section --- */
 .agenda-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px}
@@ -611,25 +625,29 @@ p{margin:0; text-align:left}
 
     <div class="card-grid card-grid--2">
       <div class="speaker-card">
-        <div class="speaker-img-wrap">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" alt="Foto Aomi Hazelia Dewi, S.Gz., MM">
+        <div class="speaker-photo">
+          <img src="assets/pemateri-aomi-hazelia.webp" alt="Foto Aomi Hazelia Dewi, S.Gz., MM">
         </div>
-        <h3>Aomi Hazelia Dewi, S.Gz., MM</h3>
-        <p class="speaker-role">Konsultan Keamanan Pangan & Halal</p>
-        <p class="speaker-desc">
-          Fokus pada pendampingan gizi dan standar mutu dapur, serta formulasi penyusunan dokumen operasional higienis.
-        </p>
+        <div class="speaker-body">
+          <p class="speaker-role">Konsultan Keamanan Pangan & Halal</p>
+          <h3>Aomi Hazelia Dewi, S.Gz., MM</h3>
+          <p class="speaker-desc">
+            Fokus pada pendampingan gizi dan standar mutu dapur, serta formulasi penyusunan dokumen operasional higienis.
+          </p>
+        </div>
       </div>
 
       <div class="speaker-card">
-        <div class="speaker-img-wrap">
-          <img src="https://images.unsplash.com/photo-1580894732468-058f74791421?auto=format&fit=crop&q=80&w=300" alt="Foto Ibu Indah">
+        <div class="speaker-photo">
+          <img src="assets/pemateri-indah-chindarwani.webp" alt="Foto Indah Chindarwani, S.TP">
         </div>
-        <h3>Ibu Indah</h3>
-        <p class="speaker-role">Praktisi Keamanan Pangan & HACCP</p>
-        <p class="speaker-desc">
-          Spesialis implementasi Sistem Manajemen Keamanan Pangan (SMKP) dan pengawasan prosedur sanitasi di lapangan.
-        </p>
+        <div class="speaker-body">
+          <p class="speaker-role">Praktisi Keamanan Pangan & HACCP</p>
+          <h3>Indah Chindarwani, S.TP</h3>
+          <p class="speaker-desc">
+            Spesialis implementasi Sistem Manajemen Keamanan Pangan (SMKP) dan pengawasan prosedur sanitasi di lapangan.
+          </p>
+        </div>
       </div>
     </div>
   </div>
