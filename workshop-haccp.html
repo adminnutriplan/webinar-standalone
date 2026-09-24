@@ -284,7 +284,11 @@ p{margin:0; text-align:left}
   filter:blur(30px); pointer-events:none;
 }
 .price-banner__label{position:relative; font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:rgba(255,255,255,.8)}
-.price-banner__original{position:relative; font-size:1.1rem; font-weight:600; color:rgba(255,255,255,.55); text-decoration:line-through}
+.price-banner__original{
+  position:relative; font-size:1.1rem; font-weight:600; color:rgba(255,255,255,.6);
+  text-decoration:line-through; text-decoration-color:rgba(255,255,255,.85);
+  text-decoration-thickness:2px;
+}
 .price-banner__value{position:relative; font-size:clamp(2.2rem, 1.8rem + 2vw, 3rem); font-weight:800; color:#F59E0B; line-height:1}
 .price-banner__value span{font-size:1.1rem; font-weight:500; color:#fff}
 .price-banner__quota{
