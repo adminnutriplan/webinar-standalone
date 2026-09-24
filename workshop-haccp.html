@@ -88,6 +88,11 @@ p{margin:0; text-align:left}
   margin-bottom:48px;
   padding:0;
 }
+.sec-header--wide{max-width:none}
+.sec-header--wide h2{white-space:nowrap}
+@media (max-width:640px){
+  .sec-header--wide h2{white-space:normal}
+}
 
 .eyebrow{
   display:inline-block; margin-bottom:14px;
@@ -98,6 +103,8 @@ p{margin:0; text-align:left}
   content:''; position:absolute; left:0; top:.55em;
   width:18px; height:3px; background:var(--s-500); border-radius:2px;
 }
+.eyebrow--center{padding-left:0; text-align:center}
+.eyebrow--center::before{display:none}
 
 /* --- Tombol --- */
 .btn{
@@ -633,7 +640,7 @@ p{margin:0; text-align:left}
 <!-- ================= SECTION SEGMEN TARGET ================= -->
 <section class="section" id="segmen">
   <div class="wrap">
-    <div class="sec-header">
+    <div class="sec-header sec-header--wide">
       <p class="eyebrow">TARGET PESERTA</p>
       <h2>Siapa Yang Cocok Mengikuti Workshop Ini?</h2>
     </div>
@@ -779,7 +786,7 @@ p{margin:0; text-align:left}
   <div class="wrap">
     <div class="faq-wrap">
       <div style="text-align:center; margin-bottom:36px">
-        <p class="eyebrow" style="padding-left:0;">BANTUAN</p>
+        <p class="eyebrow eyebrow--center">BANTUAN</p>
         <h2 style="text-align:center; font-size:2.2rem">Pertanyaan Umum Peserta</h2>
       </div>
 
@@ -844,8 +851,8 @@ p{margin:0; text-align:left}
 <script>
   try { lucide.createIcons(); } catch (e) { console.warn("Lucide icons failed to load", e); }
 
-  // Countdown Logic to 10 October 2026 09:00 WIB
-  const targetDate = new Date("2026-10-10T09:00:00+07:00").getTime();
+  // Countdown Logic to 17 October 2026 09:00 WIB
+  const targetDate = new Date("2026-10-17T09:00:00+07:00").getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
