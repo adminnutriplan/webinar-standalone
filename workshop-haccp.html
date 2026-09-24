@@ -284,6 +284,11 @@ p{margin:0; text-align:left}
   filter:blur(30px); pointer-events:none;
 }
 .price-banner__label{position:relative; font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:rgba(255,255,255,.8)}
+.price-banner__original{
+  position:relative; font-size:1.1rem; font-weight:600; color:rgba(255,255,255,.6);
+  text-decoration:line-through; text-decoration-color:rgba(255,255,255,.85);
+  text-decoration-thickness:2px;
+}
 .price-banner__value{position:relative; font-size:clamp(2.2rem, 1.8rem + 2vw, 3rem); font-weight:800; color:#F59E0B; line-height:1}
 .price-banner__value span{font-size:1.1rem; font-weight:500; color:#fff}
 .price-banner__quota{
@@ -354,9 +359,6 @@ p{margin:0; text-align:left}
 .speaker-desc{font-size:.9rem; color:var(--ink-soft); line-height:1.65; text-align:left}
 
 /* --- Agenda Section --- */
-.agenda-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px}
-@media (max-width:768px){.agenda-grid{grid-template-columns:1fr}}
-
 .agenda-card{
   background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-l);
   padding:32px; position:relative; overflow:hidden; box-shadow:var(--shadow-card);
@@ -365,10 +367,10 @@ p{margin:0; text-align:left}
   display:inline-block; padding:4px 12px; border-radius:999px; font-size:.75rem; font-weight:800;
   text-transform:uppercase; background:var(--s-900); color:#fff; margin-bottom:16px;
 }
-.agenda-card--day2 .agenda-card__badge{background:var(--n-600)}
-.agenda-list{list-style:none; padding:0; margin:16px 0 0; display:grid; gap:12px}
+.agenda-list{list-style:none; padding:0; margin:16px 0 0; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px 32px}
+@media (max-width:700px){.agenda-list{grid-template-columns:1fr}}
 .agenda-list li{display:flex; gap:10px; font-size:.93rem; color:var(--ink-soft)}
-.agenda-list svg{color:var(--s-500); flex-shrink:0; margin-top:3px}
+.agenda-list svg{color:var(--s-700); flex-shrink:0; margin-top:3px}
 
 /* --- Output Card --- */
 .output-card{
@@ -559,6 +561,7 @@ p{margin:0; text-align:left}
     <div class="event-bottom">
       <div class="price-banner">
         <div class="price-banner__label">Investasi Pelatihan</div>
+        <div class="price-banner__original">Rp 250.000</div>
         <div class="price-banner__value">Rp 199.000 <span>/ orang</span></div>
         <div class="price-banner__quota">Kuota Terbatas: Hanya 100 Peserta Pertama</div>
         <a class="btn btn--nutri" href="https://docs.google.com/forms/d/e/1FAIpQLSe86wlsf9KukduI19jooMdog9178yUy_t7A_WXnBPzw0Cfqvw/viewform" target="_blank" rel="noopener">
@@ -702,29 +705,18 @@ p{margin:0; text-align:left}
       <h2>Materi Workshop</h2>
     </div>
 
-    <div class="agenda-grid">
-      <div class="agenda-card">
-        <span class="agenda-card__badge">HARI 1</span>
-        <h3>Introduction & Analisis Bahaya</h3>
-        <p class="fine" style="margin-top:4px">Sabtu, 10 Oktober 2026 • 09.00 - 15.00 WIB</p>
-        <ul class="agenda-list">
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Introduction Keamanan Pangan:</strong> Prinsip dasar HACCP dalam operasional.</span></li>
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>GMP & SLHS:</strong> Penerapan kelayakan higiene sanitasi & standar operasional.</span></li>
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Penyusunan Tim HACCP:</strong> Pembagian peran personel pengawas keamanan pangan.</span></li>
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Analisis Bahaya:</strong> Identifikasi potensi bahaya fisik, biologi, dan kimiawi.</span></li>
-        </ul>
-      </div>
-
-      <div class="agenda-card agenda-card--day2">
-        <span class="agenda-card__badge">HARI 2</span>
-        <h3>CCP & Workshop Dokumen HACCP</h3>
-        <p class="fine" style="margin-top:4px">Minggu, 11 Oktober 2026 • 09.00 - 15.00 WIB</p>
-        <ul class="agenda-list">
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Penentuan CCP:</strong> Penggunaan decision tree untuk titik kendali kritis.</span></li>
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Workshop Dokumen:</strong> Praktik pengisian worksheet & formulir pemantauan.</span></li>
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Evaluasi & Diskusi:</strong> Pembahasan kasus riil dapur dan pemantauan.</span></li>
-        </ul>
-      </div>
+    <div class="agenda-card">
+      <span class="agenda-card__badge">17 OKTOBER 2026</span>
+      <h3>Workshop Penyusunan Dokumen HACCP</h3>
+      <p class="fine" style="margin-top:4px">Sabtu, 17 Oktober 2026 • 09.00 - 15.00 WIB</p>
+      <ul class="agenda-list">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <span><strong>Draft Dokumen HACCP:</strong> Kerangka dan isi dokumen sesuai ruang lingkup.</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <span><strong>Diagram Alir Proses:</strong> Alur proses yang disusun dan diverifikasi bersama.</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <span><strong>Analisis Bahaya:</strong> Identifikasi bahaya dan langkah pengendalian.</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <span><strong>Rencana Monitoring:</strong> Parameter dan metode monitoring yang relevan.</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <span><strong>Tindakan Koreksi:</strong> Respon ketika terjadi penyimpangan.</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <span><strong>Verifikasi & Rekaman:</strong> Draft prosedur dan formulir bukti pelaksanaan.</span></li>
+      </ul>
     </div>
 
     <div class="output-card">
