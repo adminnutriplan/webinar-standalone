@@ -359,9 +359,6 @@ p{margin:0; text-align:left}
 .speaker-desc{font-size:.9rem; color:var(--ink-soft); line-height:1.65; text-align:left}
 
 /* --- Agenda Section --- */
-.agenda-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px}
-@media (max-width:768px){.agenda-grid{grid-template-columns:1fr}}
-
 .agenda-card{
   background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-l);
   padding:32px; position:relative; overflow:hidden; box-shadow:var(--shadow-card);
@@ -370,8 +367,8 @@ p{margin:0; text-align:left}
   display:inline-block; padding:4px 12px; border-radius:999px; font-size:.75rem; font-weight:800;
   text-transform:uppercase; background:var(--s-900); color:#fff; margin-bottom:16px;
 }
-.agenda-card--day2 .agenda-card__badge{background:var(--n-600)}
-.agenda-list{list-style:none; padding:0; margin:16px 0 0; display:grid; gap:12px}
+.agenda-list{list-style:none; padding:0; margin:16px 0 0; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px 32px}
+@media (max-width:700px){.agenda-list{grid-template-columns:1fr}}
 .agenda-list li{display:flex; gap:10px; font-size:.93rem; color:var(--ink-soft)}
 .agenda-list svg{color:var(--s-500); flex-shrink:0; margin-top:3px}
 
@@ -708,29 +705,18 @@ p{margin:0; text-align:left}
       <h2>Materi Workshop</h2>
     </div>
 
-    <div class="agenda-grid">
-      <div class="agenda-card">
-        <span class="agenda-card__badge">HARI 1</span>
-        <h3>Introduction & Analisis Bahaya</h3>
-        <p class="fine" style="margin-top:4px">Sabtu, 10 Oktober 2026 • 09.00 - 15.00 WIB</p>
-        <ul class="agenda-list">
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Introduction Keamanan Pangan:</strong> Prinsip dasar HACCP dalam operasional.</span></li>
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>GMP & SLHS:</strong> Penerapan kelayakan higiene sanitasi & standar operasional.</span></li>
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Penyusunan Tim HACCP:</strong> Pembagian peran personel pengawas keamanan pangan.</span></li>
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Analisis Bahaya:</strong> Identifikasi potensi bahaya fisik, biologi, dan kimiawi.</span></li>
-        </ul>
-      </div>
-
-      <div class="agenda-card agenda-card--day2">
-        <span class="agenda-card__badge">HARI 2</span>
-        <h3>CCP & Workshop Dokumen HACCP</h3>
-        <p class="fine" style="margin-top:4px">Minggu, 11 Oktober 2026 • 09.00 - 15.00 WIB</p>
-        <ul class="agenda-list">
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Penentuan CCP:</strong> Penggunaan decision tree untuk titik kendali kritis.</span></li>
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Workshop Dokumen:</strong> Praktik pengisian worksheet & formulir pemantauan.</span></li>
-          <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Evaluasi & Diskusi:</strong> Pembahasan kasus riil dapur dan pemantauan.</span></li>
-        </ul>
-      </div>
+    <div class="agenda-card">
+      <span class="agenda-card__badge">17 OKTOBER 2026</span>
+      <h3>Workshop Penyusunan Dokumen HACCP</h3>
+      <p class="fine" style="margin-top:4px">Sabtu, 17 Oktober 2026 • 09.00 - 15.00 WIB</p>
+      <ul class="agenda-list">
+        <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Draft Dokumen HACCP:</strong> Kerangka dan isi dokumen sesuai ruang lingkup.</span></li>
+        <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Diagram Alir Proses:</strong> Alur proses yang disusun dan diverifikasi bersama.</span></li>
+        <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Analisis Bahaya:</strong> Identifikasi bahaya dan langkah pengendalian.</span></li>
+        <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Rencana Monitoring:</strong> Parameter dan metode monitoring yang relevan.</span></li>
+        <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Tindakan Koreksi:</strong> Respon ketika terjadi penyimpangan.</span></li>
+        <li><i data-lucide="check-circle" class="w-5 h-5"></i> <span><strong>Verifikasi & Rekaman:</strong> Draft prosedur dan formulir bukti pelaksanaan.</span></li>
+      </ul>
     </div>
 
     <div class="output-card">
